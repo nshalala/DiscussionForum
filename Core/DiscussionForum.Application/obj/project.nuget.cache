@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mkSsoJ89woq+JilE06ZUuym+1hPayakeXAOHitq9H+J42IzLfMKyVfCOS+4aoh/G1Y2ydcQXMfjmDPanV6cOQA==",
+  "dgSpecHash": "3SB/HuRlZ80BasS05f5msuio0N34PGHLdixkU+6ynamF8ztNcx0MebO9cp7Q7XE/XL8bO5hk9Q+qE7SEVnvdIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nshal\\Desktop\\DiscussionForum\\Core\\DiscussionForum.Application\\DiscussionForum.Application.csproj",
+  "projectFilePath": "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/DiscussionForum.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -3,11 +3,60 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{10D4FBDD-E668-43A8-B91C-A32E9663D5D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscussionForum.Domain", "Core\DiscussionForum.Domain\DiscussionForum.Domain.csproj", "{4F6B1A90-3019-436E-9D22-7BD7155CA3E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscussionForum.Application", "Core\DiscussionForum.Application\DiscussionForum.Application.csproj", "{AA416CB1-F979-4245-A232-01384C7789D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{36E9E2D9-469C-4D5D-8460-0A4DF2060C63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscussionForum.Persistence", "Infrastructure\DiscussionForum.Persistence\DiscussionForum.Persistence.csproj", "{3591A600-28EA-4C18-83CE-8B87589334C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscussionForum.Infrastructure", "Infrastructure\DiscussionForum.Infrastructure\DiscussionForum.Infrastructure.csproj", "{C256EE72-72E4-48BE-9470-A1FDBC2AC0C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{23177EE6-B588-404B-851B-E06FE56CCD62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscussionForum.API", "Presentation\DiscussionForum.API\DiscussionForum.API.csproj", "{7099EE4B-F1C6-4DC3-8BC1-6321107779AB}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4F9C2CA5-BCED-4351-9E22-7500AF81A143}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4F6B1A90-3019-436E-9D22-7BD7155CA3E5} = {10D4FBDD-E668-43A8-B91C-A32E9663D5D2}
+		{AA416CB1-F979-4245-A232-01384C7789D9} = {10D4FBDD-E668-43A8-B91C-A32E9663D5D2}
+		{3591A600-28EA-4C18-83CE-8B87589334C4} = {36E9E2D9-469C-4D5D-8460-0A4DF2060C63}
+		{C256EE72-72E4-48BE-9470-A1FDBC2AC0C6} = {36E9E2D9-469C-4D5D-8460-0A4DF2060C63}
+		{7099EE4B-F1C6-4DC3-8BC1-6321107779AB} = {23177EE6-B588-404B-851B-E06FE56CCD62}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F6B1A90-3019-436E-9D22-7BD7155CA3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F6B1A90-3019-436E-9D22-7BD7155CA3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F6B1A90-3019-436E-9D22-7BD7155CA3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F6B1A90-3019-436E-9D22-7BD7155CA3E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA416CB1-F979-4245-A232-01384C7789D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA416CB1-F979-4245-A232-01384C7789D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA416CB1-F979-4245-A232-01384C7789D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA416CB1-F979-4245-A232-01384C7789D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3591A600-28EA-4C18-83CE-8B87589334C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3591A600-28EA-4C18-83CE-8B87589334C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3591A600-28EA-4C18-83CE-8B87589334C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3591A600-28EA-4C18-83CE-8B87589334C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C256EE72-72E4-48BE-9470-A1FDBC2AC0C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C256EE72-72E4-48BE-9470-A1FDBC2AC0C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C256EE72-72E4-48BE-9470-A1FDBC2AC0C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C256EE72-72E4-48BE-9470-A1FDBC2AC0C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7099EE4B-F1C6-4DC3-8BC1-6321107779AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7099EE4B-F1C6-4DC3-8BC1-6321107779AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7099EE4B-F1C6-4DC3-8BC1-6321107779AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7099EE4B-F1C6-4DC3-8BC1-6321107779AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 EndGlobal

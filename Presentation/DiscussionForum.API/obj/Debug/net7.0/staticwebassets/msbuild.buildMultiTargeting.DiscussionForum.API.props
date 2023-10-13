@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/DiscussionForum.API.props" />
+</Project>

@@ -1,0 +1,11 @@
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/bin/Debug/net7.0/DiscussionForum.Domain.deps.json
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/bin/Debug/net7.0/DiscussionForum.Domain.dll
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/bin/Debug/net7.0/DiscussionForum.Domain.pdb
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.AssemblyInfoInputs.cache
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.AssemblyInfo.cs
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.csproj.CoreCompileInputs.cache
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.dll
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/refint/DiscussionForum.Domain.dll
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.pdb
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/ref/DiscussionForum.Domain.dll

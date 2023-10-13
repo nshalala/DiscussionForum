@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kN1m5AsIrwrihIdbAADPms7OizpZ4nlLIl70c8Me7dg=",
+  "Source": "DiscussionForum.API",
+  "BasePath": "_content/DiscussionForum.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
