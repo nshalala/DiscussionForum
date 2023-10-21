@@ -17,10 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\..\Core\DiscussionForum.Application\DiscussionForum.Application.csproj" />
       <ProjectReference Include="..\..\Infrastructure\DiscussionForum.Persistence\DiscussionForum.Persistence.csproj" />
     </ItemGroup>

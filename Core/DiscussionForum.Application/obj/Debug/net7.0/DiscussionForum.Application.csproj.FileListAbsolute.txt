@@ -13,3 +13,7 @@
 /home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/obj/Debug/net7.0/refint/DiscussionForum.Application.dll
 /home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.pdb
 /home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/obj/Debug/net7.0/ref/DiscussionForum.Application.dll
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.xml
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/bin/Debug/net7.0/AutoMapper.dll
+/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/bin/Debug/net7.0/AutoMapper.xml

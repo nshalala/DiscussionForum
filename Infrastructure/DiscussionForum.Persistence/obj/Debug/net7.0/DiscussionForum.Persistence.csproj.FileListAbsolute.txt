@@ -17,3 +17,5 @@
 /home/shalala/Desktop/DiscussionForum/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.pdb
 /home/shalala/Desktop/DiscussionForum/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.genruntimeconfig.cache
 /home/shalala/Desktop/DiscussionForum/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/ref/DiscussionForum.Persistence.dll
+/home/shalala/Desktop/DiscussionForum/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Infrastructure.dll
+/home/shalala/Desktop/DiscussionForum/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Infrastructure.pdb

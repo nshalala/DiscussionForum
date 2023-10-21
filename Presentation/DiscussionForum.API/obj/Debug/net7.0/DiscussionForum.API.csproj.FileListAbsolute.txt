@@ -47,3 +47,9 @@
 /home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Application.pdb
 /home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Persistence.pdb
 /home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Domain.pdb
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/FluentValidation.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/FluentValidation.DependencyInjectionExtensions.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Infrastructure.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Infrastructure.pdb
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/AutoMapper.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

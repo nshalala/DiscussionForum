@@ -1,14 +1,12 @@
-using DiscussionForum.Persistence.Contexts;
-using Microsoft.EntityFrameworkCore;
+using DiscussionForum.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<DiscussionForumDbContext>(opt =>
-{
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL"));
-});
+
+builder.Services.AddPersistenceServices();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

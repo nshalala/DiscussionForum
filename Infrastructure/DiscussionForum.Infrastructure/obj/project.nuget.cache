@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "v1uyCgjA9uhpWoWKjxMZOJ/O8Lzkj8+BS//gwFSfsGO4eU7JGRLb5NysljX+T52BH31fkGGYn14JfWjFAKobdg==",
+  "dgSpecHash": "6jxi5JtHFq0thIiaWIAR9jIalRKwDgrorzrS8tmNaInzHAaXATzv59JWFMKnl4brgMbSZUH0tH6+2XVfV72Gkg==",
   "success": true,
   "projectFilePath": "/home/shalala/Desktop/DiscussionForum/Infrastructure/DiscussionForum.Infrastructure/DiscussionForum.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/shalala/.nuget/packages/fluentvalidation/11.7.1/fluentvalidation.11.7.1.nupkg.sha512",
+    "/home/shalala/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.7.1/fluentvalidation.dependencyinjectionextensions.11.7.1.nupkg.sha512",
+    "/home/shalala/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/2.1.0/microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

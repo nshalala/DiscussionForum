@@ -38,7 +38,11 @@ namespace DiscussionForum.Persistence.Migrations
                     b.Property<string>("Fullname")
                         .HasColumnType("text");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("HashedPassword")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Salt")
                         .IsRequired()
                         .HasColumnType("text");
 
