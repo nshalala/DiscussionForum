@@ -1,6 +1,6 @@
 namespace DiscussionForum.Application.DTOs.User;
 
-public interface UpdateUserDto
+public record UpdateUserDto
 {
     public string? Fullname { get; set; }
     public string? Username { get; set; }

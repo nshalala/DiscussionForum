@@ -17,10 +17,6 @@ public class UpdateUserDtoValidator : AbstractValidator<UpdateUserDto>
             .NotNull()
             .NotEmpty()
             .EmailAddress();
-        RuleFor(x => x.CurrentPassword)
-            .Cascade(CascadeMode.Stop)
-            .Matches(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$")
-                .WithMessage("The Current Password must contain at least one letter, one digit, one special character (@, $, !, %, *, ?, or &) and be at least 8 characters long.");
         RuleFor(x => x.NewPassword)
             .Cascade(CascadeMode.Stop)
             .Matches(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$")

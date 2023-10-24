@@ -1,6 +1,6 @@
 namespace DiscussionForum.Application.DTOs.User;
 
-public class UserListDto
+public record UserListDto
 {
     public DateTime CreatedAt { get; set; }
     public string Username { get; set; }

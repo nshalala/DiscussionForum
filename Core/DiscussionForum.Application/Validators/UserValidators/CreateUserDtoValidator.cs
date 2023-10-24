@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace DiscussionForum.Application.Validators.UserValidators;
 
-public class CreateUserDtoValidator : AbstractValidator<CreateUserDto>
+public class RegisterUserDtoValidator : AbstractValidator<RegisterUserDto>
 {
-    public CreateUserDtoValidator()
+    public RegisterUserDtoValidator()
     {
         RuleFor(x => x.Fullname)
             .Cascade(CascadeMode.Stop)

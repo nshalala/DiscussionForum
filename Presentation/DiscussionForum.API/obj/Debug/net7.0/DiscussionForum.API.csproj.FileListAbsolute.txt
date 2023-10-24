@@ -53,3 +53,10 @@
 /home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Infrastructure.pdb
 /home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/AutoMapper.dll
 /home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll

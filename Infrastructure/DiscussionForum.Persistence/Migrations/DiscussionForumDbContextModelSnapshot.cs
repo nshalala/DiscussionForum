@@ -22,6 +22,45 @@ namespace DiscussionForum.Persistence.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("CommunityUser", b =>
+                {
+                    b.Property<Guid>("CommunitiesAsMemberId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("MembersId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("CommunitiesAsMemberId", "MembersId");
+
+                    b.HasIndex("MembersId");
+
+                    b.ToTable("CommunityUser");
+                });
+
+            modelBuilder.Entity("DiscussionForum.Domain.Entities.Community", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AdminId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdminId");
+
+                    b.ToTable("Communities");
+                });
+
             modelBuilder.Entity("DiscussionForum.Domain.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -33,14 +72,22 @@ namespace DiscussionForum.Persistence.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(150)
+                        .HasColumnType("character varying(150)");
 
                     b.Property<string>("Fullname")
-                        .HasColumnType("text");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("HashedPassword")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("RefreshTokenExpires")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Salt")
                         .IsRequired()
@@ -48,11 +95,43 @@ namespace DiscussionForum.Persistence.Migrations
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("CommunityUser", b =>
+                {
+                    b.HasOne("DiscussionForum.Domain.Entities.Community", null)
+                        .WithMany()
+                        .HasForeignKey("CommunitiesAsMemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DiscussionForum.Domain.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("MembersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DiscussionForum.Domain.Entities.Community", b =>
+                {
+                    b.HasOne("DiscussionForum.Domain.Entities.User", "Admin")
+                        .WithMany("CommunitiesAsAdmin")
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+                });
+
+            modelBuilder.Entity("DiscussionForum.Domain.Entities.User", b =>
+                {
+                    b.Navigation("CommunitiesAsAdmin");
                 });
 #pragma warning restore 612, 618
         }

@@ -2,9 +2,9 @@ using System.Security.Claims;
 using AutoMapper;
 using DiscussionForum.Application.Abstractions.Services;
 using DiscussionForum.Application.DTOs.User;
+using DiscussionForum.Application.Exceptions;
 using DiscussionForum.Application.Repositories;
 using DiscussionForum.Domain.Entities;
-using DiscussionForum.Domain.Exceptions;
 using DiscussionForum.Infrastructure.Operations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -37,7 +37,7 @@ public class UserService : IUserService
         return _mapper.Map<UserDetailDto>(user);
     }
 
-    public async Task<bool> CreateUserAsync(CreateUserDto model)
+    public async Task<bool> RegisterUserAsync(RegisterUserDto model)
     {
         if (model.Password != model.PasswordConfirm)
             throw new Exception("Passwords does not match");
@@ -49,17 +49,12 @@ public class UserService : IUserService
         
         if (_userRepository.Table.Any(c => c.Email == model.Email))
             throw new Exception("This email is on another account.");
-        
-        var user = new User()
-        {
-            Username = model.Username,
-            Email = model.Email,
-            HashedPassword = hashedPassword[0],
-            Salt = hashedPassword[1]
-        };
 
-        if (model.Fullname is not null)
-            user.Fullname = model.Fullname;
+        var user = _mapper.Map<User>(model);
+
+        user.HashedPassword = hashedPassword[0];
+        user.Salt = hashedPassword[1];
+
         
         var response = await _userRepository.AddAsync(user);
         await _userRepository.SaveAsync();
@@ -68,20 +63,28 @@ public class UserService : IUserService
 
     public async Task<bool> UpdateUserAsync(UpdateUserDto model)
     {
-        var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var userId = _contextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         var user = await _userRepository.GetSingleAsync(u => u.Id == Guid.Parse(userId));
         
         if (user == null)
             throw new UserNotFoundException();
 
-        if (model.Fullname is not null)
+        if (!String.IsNullOrEmpty(model.Fullname))
             user.Fullname = model.Fullname;
-        
-        if (model.Username is not null)
-            user.Username = model.Username;
 
-        if (model.Email is not null)
+        if (!String.IsNullOrEmpty(model.Username))
+        {
+            if (await _userRepository.IsExistAsync(u => u.Username == model.Username))
+                throw new Exception("This username is unavailable");
+            user.Username = model.Username;
+        }
+
+        if (!String.IsNullOrEmpty(model.Email))
+        {
+            if (await _userRepository.IsExistAsync(u => u.Email == model.Email))
+                throw new Exception("This email is unavailable");
             user.Email = model.Email;
+        }
 
         if (model.CurrentPassword is not null)
         {
@@ -106,9 +109,21 @@ public class UserService : IUserService
                 throw new Exception("Password must be at least 8 characters length.");
                 
         }
+        
+        
 
         await _userRepository.SaveAsync();
         return true;
+    }
+
+    public async Task UpdateRefreshToken(string refreshToken, User user, DateTime accessTokenExpires, int refreshTokenLifetime)
+    {
+        if (user == null)
+            throw new UserNotFoundException();
+        user.RefreshToken = refreshToken;
+        user.RefreshTokenExpires = accessTokenExpires.AddMinutes(refreshTokenLifetime);
+        _userRepository.Update(user);
+        await _userRepository.SaveAsync();
     }
 
     public async Task<bool> DeleteUserAsync(string id)

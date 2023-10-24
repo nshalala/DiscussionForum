@@ -1,4 +1,5 @@
 using DiscussionForum.Domain.Entities;
+using DiscussionForum.Persistence.DbConfigurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace DiscussionForum.Persistence.Contexts;
@@ -9,5 +10,13 @@ public class DiscussionForumDbContext : DbContext
     {
     }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfiguration(new UserConfiguration());
+        modelBuilder.ApplyConfiguration(new CommunityConfiguration());
+    }
+
     public DbSet<User> Users { get; set; }
+    public DbSet<Community> Communities { get; set; }
+    
 }

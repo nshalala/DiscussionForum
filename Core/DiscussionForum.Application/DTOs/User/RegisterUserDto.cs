@@ -1,6 +1,6 @@
 namespace DiscussionForum.Application.DTOs.User;
 
-public class CreateUserDto
+public record RegisterUserDto
 {
     public string? Fullname { get; set; }
     public string Username { get; set; }

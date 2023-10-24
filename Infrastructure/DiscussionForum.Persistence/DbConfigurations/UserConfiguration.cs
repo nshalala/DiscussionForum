@@ -11,5 +11,10 @@ public class UserConfiguration:IEntityTypeConfiguration<User>
         builder.Property(u => u.Username).HasMaxLength(30);
         builder.Property(u => u.Email).HasMaxLength(150);
         builder.Property(u => u.Fullname).HasMaxLength(100);
+        builder.HasMany(u => u.CommunitiesAsAdmin)
+            .WithOne(c => c.Admin)
+            .HasForeignKey(c => c.AdminId);
+        builder.HasMany(u => u.CommunitiesAsMember)
+            .WithMany(c => c.Members);
     }
 }

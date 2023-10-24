@@ -1,6 +1,7 @@
 using DiscussionForum.Application.Abstractions.Services;
 using DiscussionForum.Application.DTOs.User;
 using DiscussionForum.Application.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ namespace DiscussionForum.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class UsersController : ControllerBase
 {
     private readonly IUserService _userService;
@@ -31,14 +33,15 @@ public class UsersController : ControllerBase
     }
     
     [HttpPost]
-    public async Task<IActionResult> CreateUser(CreateUserDto model)
+    [AllowAnonymous]
+    public async Task<IActionResult> RegisterUser(RegisterUserDto model)
     {
-        var response = await _userService.CreateUserAsync(model);
+        var response = await _userService.RegisterUserAsync(model);
         return Ok(response);
     }
 
     [HttpPut]
-    public async Task<IActionResult> UpdateUser(UpdateUserDto model)
+    public async Task<IActionResult> UpdateUser([FromForm] UpdateUserDto model)
     {
         var response = await _userService.UpdateUserAsync(model);
         return Ok(response);

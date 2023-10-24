@@ -1,13 +1,12 @@
-namespace DiscussionForum.Domain.Exceptions;
+namespace DiscussionForum.Application.Exceptions;
 
 public class UserNotFoundException : Exception
 {
-    public UserNotFoundException():base("User not found")
+    public UserNotFoundException() : base("User not found")
     {
-        
     }
+
     public UserNotFoundException(string message) : base(message)
     {
-        
     }
 }
