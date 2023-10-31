@@ -18,20 +18,21 @@ public class UsersController : ControllerBase
     {
         _userService = userService;
     }
+
     [HttpGet("id")]
-    public async Task<IActionResult> GetUser(string id)
+    public async Task<IActionResult> GetUser(Guid id)
     {
         var user = await _userService.GetUserAsync(id);
         return Ok(user);
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetUsers()
+    public async Task<IActionResult> GetUsers(int skip, int take)
     {
-        var users = await _userService.GetAllUsersAsync();
+        var users = await _userService.GetAllUsersAsync(skip, take);
         return Ok(users);
     }
-    
+
     [HttpPost]
     [AllowAnonymous]
     public async Task<IActionResult> RegisterUser(RegisterUserDto model)
@@ -48,7 +49,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpDelete]
-    public async Task<IActionResult> DeleteUser(string id)
+    public async Task<IActionResult> DeleteUser(Guid id)
     {
         var response = await _userService.DeleteUserAsync(id);
         return Ok(response);

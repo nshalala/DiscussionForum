@@ -14,8 +14,6 @@ public class UpdateUserDtoValidator : AbstractValidator<UpdateUserDto>
                 .WithMessage("Username can contain letters, numbers, underscore and dot characters.");
         RuleFor(x => x.Email)
             .Cascade(CascadeMode.Stop)
-            .NotNull()
-            .NotEmpty()
             .EmailAddress();
         RuleFor(x => x.NewPassword)
             .Cascade(CascadeMode.Stop)

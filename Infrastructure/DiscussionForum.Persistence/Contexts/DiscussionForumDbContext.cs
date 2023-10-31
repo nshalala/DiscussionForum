@@ -18,5 +18,7 @@ public class DiscussionForumDbContext : DbContext
 
     public DbSet<User> Users { get; set; }
     public DbSet<Community> Communities { get; set; }
+    public DbSet<Discussion> Discussions { get; set; }
+    public DbSet<Comment> Comments { get; set; }
     
 }

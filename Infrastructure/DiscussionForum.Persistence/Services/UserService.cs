@@ -16,7 +16,7 @@ public class UserService : IUserService
     private readonly IUserRepository _userRepository;
     private readonly IHttpContextAccessor _contextAccessor;
     private readonly IMapper _mapper;
-    
+
     public UserService(IUserRepository userRepository, IHttpContextAccessor contextAccessor, IMapper mapper)
     {
         _userRepository = userRepository;
@@ -24,38 +24,40 @@ public class UserService : IUserService
         _mapper = mapper;
     }
 
-    public async Task<List<UserListDto>> GetAllUsersAsync()
+    public async Task<List<UserListDto>> GetAllUsersAsync(int take, int skip = 0)
     {
-        return _mapper.Map<List<UserListDto>>(await _userRepository.GetAll().ToListAsync());
+        if (skip < 0 || take < 0)
+            throw new ArgumentOutOfRangeException("Skip/Take values cannot be negative");
+        return _mapper.Map<List<UserListDto>>(await _userRepository.GetAll(skip, take, false).ToListAsync());
     }
 
-    public async Task<UserDetailDto> GetUserAsync(string id)
+    public async Task<UserDetailDto> GetUserAsync(Guid id)
     {
-        var user = await _userRepository.GetByIdAsync(id);
+        var user = await _userRepository.GetByIdAsync(id, false);
         if (user == null)
-            throw new UserNotFoundException();
+            throw new NotFoundException<User>();
         return _mapper.Map<UserDetailDto>(user);
     }
 
     public async Task<bool> RegisterUserAsync(RegisterUserDto model)
     {
         if (model.Password != model.PasswordConfirm)
-            throw new Exception("Passwords does not match");
-        
+            throw new NotMatchingPasswordsException();
+
         var hashedPassword = PasswordOperation.CalculateSha256Hash(model.Password);
 
         if (_userRepository.Table.Any(u => u.Username == model.Username))
-            throw new Exception("This username is not available.");
-        
+            throw new UnavailableNameException();
+
         if (_userRepository.Table.Any(c => c.Email == model.Email))
-            throw new Exception("This email is on another account.");
+            throw new UnavailableEmailException();
 
         var user = _mapper.Map<User>(model);
 
         user.HashedPassword = hashedPassword[0];
         user.Salt = hashedPassword[1];
 
-        
+
         var response = await _userRepository.AddAsync(user);
         await _userRepository.SaveAsync();
         return response;
@@ -63,11 +65,11 @@ public class UserService : IUserService
 
     public async Task<bool> UpdateUserAsync(UpdateUserDto model)
     {
-        var userId = _contextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var userId = _contextAccessor.HttpContext?.User.FindFirst(ClaimTypes.Sid)?.Value;
         var user = await _userRepository.GetSingleAsync(u => u.Id == Guid.Parse(userId));
-        
+
         if (user == null)
-            throw new UserNotFoundException();
+            throw new NotFoundException<User>();
 
         if (!String.IsNullOrEmpty(model.Fullname))
             user.Fullname = model.Fullname;
@@ -75,14 +77,14 @@ public class UserService : IUserService
         if (!String.IsNullOrEmpty(model.Username))
         {
             if (await _userRepository.IsExistAsync(u => u.Username == model.Username))
-                throw new Exception("This username is unavailable");
+                throw new UnavailableNameException();
             user.Username = model.Username;
         }
 
         if (!String.IsNullOrEmpty(model.Email))
         {
             if (await _userRepository.IsExistAsync(u => u.Email == model.Email))
-                throw new Exception("This email is unavailable");
+                throw new UnavailableEmailException();
             user.Email = model.Email;
         }
 
@@ -92,46 +94,46 @@ public class UserService : IUserService
             {
                 if (model.NewPasswordConfirm is not null)
                 {
-                    var response = PasswordOperation.VerifyPassword(model.CurrentPassword, user.Salt, user.HashedPassword);
-                    if (response)
+                    var response =
+                        PasswordOperation.VerifyPassword(model.CurrentPassword, user.Salt, user.HashedPassword);
+                    if (!response)
+                        throw new IncorrectPasswordException();
+                    if(model.NewPassword == model.NewPasswordConfirm)
                     {
                         var hashAndSalt = PasswordOperation.CalculateSha256Hash(model.NewPassword);
                         user.HashedPassword = hashAndSalt[0];
                         user.Salt = hashAndSalt[1];
                     }
                     else
-                        throw new Exception("Your password is wrong.");
+                        throw new NotMatchingPasswordsException();
                 }
                 else
                     throw new Exception("Password must be at least 8 characters length.");
-            } 
+            }
             else
                 throw new Exception("Password must be at least 8 characters length.");
-                
         }
         
-        
-
         await _userRepository.SaveAsync();
         return true;
     }
 
-    public async Task UpdateRefreshToken(string refreshToken, User user, DateTime accessTokenExpires, int refreshTokenLifetime)
+    public async Task UpdateRefreshToken(string refreshToken, User user, DateTime accessTokenExpires,
+        int refreshTokenLifetime)
     {
         if (user == null)
-            throw new UserNotFoundException();
+            throw new NotFoundException<User>();
         user.RefreshToken = refreshToken;
         user.RefreshTokenExpires = accessTokenExpires.AddMinutes(refreshTokenLifetime);
         _userRepository.Update(user);
         await _userRepository.SaveAsync();
     }
 
-    public async Task<bool> DeleteUserAsync(string id)
+    public async Task<bool> DeleteUserAsync(Guid id)
     {
-        var user = await _userRepository.GetSingleAsync(u => u.Id == Guid.Parse(id));
+        var user = await _userRepository.GetSingleAsync(u => u.Id == id);
         if (user == null)
-            throw new UserNotFoundException();
-
+            throw new NotFoundException<User>();
         var response = _userRepository.Remove(user);
         await _userRepository.SaveAsync();
         return response;

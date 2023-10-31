@@ -14,4 +14,6 @@ public class User : BaseEntity
 
     public List<Community>? CommunitiesAsAdmin { get; set; }
     public List<Community>? CommunitiesAsMember { get; set; }
+    public List<Discussion>? Discussions { get; set; }
+    public List<Comment>? Comments { get; set; }
 }

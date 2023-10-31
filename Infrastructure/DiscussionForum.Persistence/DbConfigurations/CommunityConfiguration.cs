@@ -16,5 +16,8 @@ public class CommunityConfiguration:IEntityTypeConfiguration<Community>
             .HasForeignKey(c => c.AdminId);
         builder.HasMany(c => c.Members)
             .WithMany(u => u.CommunitiesAsMember);
+        builder.HasMany(c => c.Discussions)
+            .WithOne(d => d.Community)
+            .HasForeignKey(d => d.CommunityId);
     }
 }

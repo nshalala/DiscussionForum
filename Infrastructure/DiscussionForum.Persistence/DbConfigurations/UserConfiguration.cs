@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DiscussionForum.Persistence.DbConfigurations;
 
-public class UserConfiguration:IEntityTypeConfiguration<User>
+public class UserConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
@@ -16,5 +16,11 @@ public class UserConfiguration:IEntityTypeConfiguration<User>
             .HasForeignKey(c => c.AdminId);
         builder.HasMany(u => u.CommunitiesAsMember)
             .WithMany(c => c.Members);
+        builder.HasMany(u => u.Discussions)
+            .WithOne(d => d.User)
+            .HasForeignKey(d => d.UserId);
+        builder.HasMany(u => u.Comments)
+            .WithOne(c => c.User)
+            .HasForeignKey(c => c.UserId);
     }
 }

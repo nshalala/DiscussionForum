@@ -28,7 +28,7 @@ public class AuthService : IAuthService
     public async Task<JsonWebToken> LoginAsync(LoginDto dto)
     {
         User user = await _userRepository.GetSingleAsync(u =>
-            u.Username == dto.UsernameOrEmail || u.Email == dto.UsernameOrEmail) ?? throw new UserNotFoundException();
+            u.Username == dto.UsernameOrEmail || u.Email == dto.UsernameOrEmail) ?? throw new NotFoundException<User>();
 
         bool isPasswordCorrect = PasswordOperation.VerifyPassword(dto.Password, user.Salt, user.HashedPassword);
 
