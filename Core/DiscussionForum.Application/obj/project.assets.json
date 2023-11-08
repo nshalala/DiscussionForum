@@ -124,19 +124,19 @@
     ]
   },
   "packageFolders": {
-    "/home/shalala/.nuget/packages/": {}
+    "C:\\Users\\fscod\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/DiscussionForum.Application.csproj",
+      "projectUniqueName": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Application\\DiscussionForum.Application.csproj",
       "projectName": "DiscussionForum.Application",
-      "projectPath": "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/DiscussionForum.Application.csproj",
-      "packagesPath": "/home/shalala/.nuget/packages/",
-      "outputPath": "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/obj/",
+      "projectPath": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Application\\DiscussionForum.Application.csproj",
+      "packagesPath": "C:\\Users\\fscod\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/shalala/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\fscod\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -148,8 +148,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/DiscussionForum.Domain.csproj": {
-              "projectPath": "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/DiscussionForum.Domain.csproj"
+            "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Domain\\DiscussionForum.Domain.csproj": {
+              "projectPath": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Domain\\DiscussionForum.Domain.csproj"
             }
           }
         }
@@ -185,7 +185,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/shalala/.dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

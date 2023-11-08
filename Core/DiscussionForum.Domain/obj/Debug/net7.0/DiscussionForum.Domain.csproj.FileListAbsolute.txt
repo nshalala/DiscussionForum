@@ -9,3 +9,14 @@
 /home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/refint/DiscussionForum.Domain.dll
 /home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.pdb
 /home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/Debug/net7.0/ref/DiscussionForum.Domain.dll
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\bin\Debug\net7.0\DiscussionForum.Domain.deps.json
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\bin\Debug\net7.0\DiscussionForum.Domain.dll
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\bin\Debug\net7.0\DiscussionForum.Domain.pdb
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\obj\Debug\net7.0\DiscussionForum.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\obj\Debug\net7.0\DiscussionForum.Domain.AssemblyInfoInputs.cache
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\obj\Debug\net7.0\DiscussionForum.Domain.AssemblyInfo.cs
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\obj\Debug\net7.0\DiscussionForum.Domain.csproj.CoreCompileInputs.cache
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\obj\Debug\net7.0\DiscussionForum.Domain.dll
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\obj\Debug\net7.0\refint\DiscussionForum.Domain.dll
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\obj\Debug\net7.0\DiscussionForum.Domain.pdb
+C:\Users\fscod\RiderProjects\DiscussionForum\Core\DiscussionForum.Domain\obj\Debug\net7.0\ref\DiscussionForum.Domain.dll

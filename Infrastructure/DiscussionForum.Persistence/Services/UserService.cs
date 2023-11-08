@@ -5,6 +5,7 @@ using DiscussionForum.Application.DTOs.User;
 using DiscussionForum.Application.Exceptions;
 using DiscussionForum.Application.Repositories;
 using DiscussionForum.Domain.Entities;
+using DiscussionForum.Domain.Enums;
 using DiscussionForum.Infrastructure.Operations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -56,7 +57,7 @@ public class UserService : IUserService
 
         user.HashedPassword = hashedPassword[0];
         user.Salt = hashedPassword[1];
-
+        user.Role = ApplicationRole.User;
 
         var response = await _userRepository.AddAsync(user);
         await _userRepository.SaveAsync();

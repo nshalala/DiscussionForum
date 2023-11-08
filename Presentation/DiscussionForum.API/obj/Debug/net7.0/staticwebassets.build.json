@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "kN1m5AsIrwrihIdbAADPms7OizpZ4nlLIl70c8Me7dg=",
+  "Hash": "jMQbO7/3958NxZDHlksDoOObA7aRrJfaw2BQKFGP4IA=",
   "Source": "DiscussionForum.API",
   "BasePath": "_content/DiscussionForum.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "DiscussionForum.API\\wwwroot",
+      "Source": "DiscussionForum.API",
+      "ContentRoot": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Presentation\\DiscussionForum.API\\wwwroot\\",
+      "BasePath": "_content/DiscussionForum.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

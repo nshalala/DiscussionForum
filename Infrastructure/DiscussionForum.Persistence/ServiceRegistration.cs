@@ -1,4 +1,3 @@
-using System.Reflection;
 using DiscussionForum.Application.Abstractions.Services;
 using DiscussionForum.Application.Abstractions.Token;
 using DiscussionForum.Application.Profiles;

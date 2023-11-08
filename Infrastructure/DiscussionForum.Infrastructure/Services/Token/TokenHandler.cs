@@ -39,7 +39,8 @@ public class TokenHandler : ITokenHandler
             claims: new List<Claim>()
             {
                 new(ClaimTypes.Sid, user.Id.ToString()), 
-                new(ClaimTypes.Name, user.Username ?? user.Email!)
+                new(ClaimTypes.Name, user.Username ?? user.Email!),
+                new( ClaimTypes.Role, user.Role.ToString())
             });
 
         JwtSecurityTokenHandler jwtSecurityTokenHandler = new();
