@@ -49,4 +49,16 @@ public class CommunityController:ControllerBase
         var response = await _communityService.DeleteAsync(id);
         return Ok(response);
     }
+
+    // [HttpPost]
+    // public async Task<IActionResult> JoinCommunity(Guid communityId)
+    // {
+    //     return Ok(await _communityService.JoinCommunityAsync(communityId));
+    // }
+    //
+    // [HttpPost]
+    // public async Task<IActionResult> LeaveCommunity(Guid communityId)
+    // {
+    //     return Ok(await _communityService.LeaveCommunityAsync(communityId));
+    // }
 }

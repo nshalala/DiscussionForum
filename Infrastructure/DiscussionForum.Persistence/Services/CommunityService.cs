@@ -93,7 +93,7 @@ public class CommunityService : ICommunityService
         return res;
     }
 
-    public async Task<bool> JoinCommunity(Guid communityId)
+    public async Task<bool> JoinCommunityAsync(Guid communityId)
     {
         var userId = GetUserId();
         var community = await _communityRepository.Table.Include(c => c.Members)
@@ -102,7 +102,7 @@ public class CommunityService : ICommunityService
         if (community == null)
             throw new NotFoundException<Community>();
 
-        if (community.Members.Any(m => m.Id == userId))
+        if(community.Members != null && community.Members.Any(m => m.Id == userId))
             throw new Exception("user is already a member");
 
         var user = await _userRepository.GetByIdAsync(userId);
@@ -114,6 +114,26 @@ public class CommunityService : ICommunityService
         return true;
     }
 
+    public async Task<bool> LeaveCommunityAsync(Guid communityId)
+    {
+        var userId = GetUserId();
+        var community = await _communityRepository.Table.Include(c => c.Members)
+            .SingleOrDefaultAsync(c => c.Id == communityId);
+
+        if (community == null)
+            throw new NotFoundException<Community>();
+
+        if(community.Members == null || community.Members.All(m => m.Id != userId))
+            throw new Exception("user is not a member");
+        
+        var user = await _userRepository.GetByIdAsync(userId);
+        if (user == null)
+            throw new NotFoundException<User>();
+
+        community.Members.Remove(user);
+        await _communityRepository.SaveAsync();
+        return true;
+    }
 
     private Guid GetUserId()
     {

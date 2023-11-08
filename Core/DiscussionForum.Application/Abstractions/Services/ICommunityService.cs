@@ -10,5 +10,6 @@ public interface ICommunityService
     Task<bool> UpdateAsync(UpdateCommunityDto model);
     Task<bool> DeleteAsync(Guid id);
 
-    Task<bool> JoinCommunity(Guid communityId);
+    Task<bool> JoinCommunityAsync(Guid communityId);
+    Task<bool> LeaveCommunityAsync(Guid communityId);
 }
