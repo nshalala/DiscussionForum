@@ -27,7 +27,8 @@ public class UsersController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetUsers(int skip, int take)
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetUsers(int skip = 0, int take = 50)
     {
         var users = await _userService.GetAllUsersAsync(skip, take);
         return Ok(users);

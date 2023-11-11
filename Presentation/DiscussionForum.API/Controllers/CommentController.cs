@@ -1,5 +1,6 @@
 using DiscussionForum.Application.Abstractions.Services;
 using DiscussionForum.Application.DTOs.Comment;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiscussionForum.API.Controllers;
@@ -37,6 +38,7 @@ public class CommentController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> CreateComment([FromBody] CreateCommentDto dto)
     {
         await _commentService.CreateAsync(dto);
@@ -44,6 +46,7 @@ public class CommentController : ControllerBase
     }
 
     [HttpDelete]
+    [Authorize]
     public async Task<IActionResult> Delete(Guid id)
     {
         await _commentService.DeleteAsync(id);

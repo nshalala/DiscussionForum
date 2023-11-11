@@ -5,6 +5,7 @@ using DiscussionForum.Application.DTOs.User;
 using DiscussionForum.Application.Exceptions;
 using DiscussionForum.Application.Repositories;
 using DiscussionForum.Domain.Entities;
+using DiscussionForum.Domain.Enums;
 using DiscussionForum.Infrastructure.Operations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -33,10 +34,13 @@ public class UserService : IUserService
 
     public async Task<UserDetailDto> GetUserAsync(Guid id)
     {
-        var user = await _userRepository.GetByIdAsync(id, false);
+        var user = await _userRepository.GetByIdAsync(id, false, "Discussions", "Comments");
         if (user == null)
             throw new NotFoundException<User>();
-        return _mapper.Map<UserDetailDto>(user);
+        var dto = _mapper.Map<UserDetailDto>(user);
+        dto.CommentsCount = user.Comments?.Count ?? 0;
+        dto.DiscussionsCount = user.Discussions?.Count ?? 0;
+        return dto;
     }
 
     public async Task<bool> RegisterUserAsync(RegisterUserDto model)
@@ -56,7 +60,7 @@ public class UserService : IUserService
 
         user.HashedPassword = hashedPassword[0];
         user.Salt = hashedPassword[1];
-
+        user.Role = ApplicationRole.User;
 
         var response = await _userRepository.AddAsync(user);
         await _userRepository.SaveAsync();

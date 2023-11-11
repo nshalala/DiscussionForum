@@ -34,7 +34,7 @@ namespace DiscussionForum.Persistence.Migrations
 
                     b.HasIndex("MembersId");
 
-                    b.ToTable("CommunityUser", (string)null);
+                    b.ToTable("CommunityUser");
                 });
 
             modelBuilder.Entity("DiscussionForum.Domain.Entities.Comment", b =>
@@ -70,7 +70,7 @@ namespace DiscussionForum.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Comments", (string)null);
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("DiscussionForum.Domain.Entities.Community", b =>
@@ -94,7 +94,7 @@ namespace DiscussionForum.Persistence.Migrations
 
                     b.HasIndex("AdminId");
 
-                    b.ToTable("Communities", (string)null);
+                    b.ToTable("Communities");
                 });
 
             modelBuilder.Entity("DiscussionForum.Domain.Entities.Discussion", b =>
@@ -128,7 +128,7 @@ namespace DiscussionForum.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Discussions", (string)null);
+                    b.ToTable("Discussions");
                 });
 
             modelBuilder.Entity("DiscussionForum.Domain.Entities.User", b =>
@@ -159,6 +159,9 @@ namespace DiscussionForum.Persistence.Migrations
                     b.Property<DateTime?>("RefreshTokenExpires")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("Role")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Salt")
                         .IsRequired()
                         .HasColumnType("text");
@@ -170,7 +173,7 @@ namespace DiscussionForum.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("CommunityUser", b =>

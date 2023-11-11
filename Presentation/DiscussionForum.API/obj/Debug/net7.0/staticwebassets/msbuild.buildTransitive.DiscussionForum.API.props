@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="../buildMultiTargeting/DiscussionForum.API.props" />
+  <Import Project="..\buildMultiTargeting\DiscussionForum.API.props" />
 </Project>

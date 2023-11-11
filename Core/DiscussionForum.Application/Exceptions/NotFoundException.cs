@@ -6,7 +6,7 @@ public class NotFoundException<TEntity> : Exception
     {
     }
 
-    public NotFoundException() : base(typeof(TEntity) + " not found")
+    public NotFoundException() : base(typeof(TEntity).Name + " not found")
     {
     }
 }
