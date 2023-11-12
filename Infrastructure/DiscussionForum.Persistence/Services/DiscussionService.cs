@@ -30,14 +30,14 @@ public class DiscussionService : IDiscussionService
     {
         if (skip < 0 || take < 0) throw new ArgumentOutOfRangeException("skip or take cannot be negative");
 
-        var discussions = await _discussionRepository.GetAll(skip, take, false, "Community", "Comments").ToListAsync();
+        var discussions = await _discussionRepository.GetAll(skip, take, false, "Community", "Comments", "DiscussionRatings").ToListAsync();
 
         var dtos = _mapper.Map<List<DiscussionListDto>>(discussions);
         for (int i = 0; i < dtos.Count; i++)
         {
             dtos[i].CommentCount = discussions[i].Comments?.Count ?? 0;
+            dtos[i].Rating = _calcRate(discussions[i].DiscussionRatings);
         }
-
         return dtos;
     }
 
@@ -46,11 +46,12 @@ public class DiscussionService : IDiscussionService
         if (skip < 0 || take < 0) throw new ArgumentOutOfRangeException("skip or take cannot be negative");
 
         var discussions = await _discussionRepository.GetWhere(d => d.CommunityId == communityId).Include("Community")
-            .Include("Comments").Skip(skip).Take(take).ToListAsync();
+            .Include("Comments").Include("DiscussionRatings").Skip(skip).Take(take).ToListAsync();
         var dtos = _mapper.Map<List<DiscussionListDto>>(discussions);
         for (int i = 0; i < dtos.Count; i++)
         {
             dtos[i].CommentCount = discussions[i].Comments?.Count ?? 0;
+            dtos[i].Rating = _calcRate(discussions[i].DiscussionRatings);
         }
 
         return dtos;
@@ -58,11 +59,12 @@ public class DiscussionService : IDiscussionService
 
     public async Task<DiscussionDetailDto> GetByIdAsync(Guid id)
     {
-        var discussion = await _discussionRepository.GetByIdAsync(id, false, "User", "Community", "Comments");
+        var discussion = await _discussionRepository.GetByIdAsync(id, false, "User", "Community", "Comments", "DiscussionRatings");
         if (discussion == null)
             throw new NotFoundException<Discussion>();
-
-        return _mapper.Map<DiscussionDetailDto>(discussion);
+        var dto = _mapper.Map<DiscussionDetailDto>(discussion);
+        dto.Rating = _calcRate(discussion.DiscussionRatings);
+        return dto;
     }
 
     public async Task<bool> CreateAsync(CreateDiscussionDto model)
@@ -79,7 +81,7 @@ public class DiscussionService : IDiscussionService
 
         var discussion = _mapper.Map<Discussion>(model);
         discussion.UserId = userId;
-        discussion.Rating = 0;
+        discussion.CreatedAt = DateTime.UtcNow;
 
         var response = await _discussionRepository.AddAsync(discussion);
         await _discussionRepository.SaveAsync();
@@ -107,7 +109,7 @@ public class DiscussionService : IDiscussionService
     public async Task<bool> DeleteAsync(Guid id)
     {
         var userId = _discussionRepository.GetUserId();
-        
+
         var discussion = await _discussionRepository.GetByIdAsync(id);
         if (discussion == null)
             throw new NotFoundException<Discussion>();
@@ -120,4 +122,28 @@ public class DiscussionService : IDiscussionService
         return response;
     }
 
+    public async Task<bool> RateAsync(RateDiscussionDto model)
+    {
+        var userId = _discussionRepository.GetUserId();
+        var discussion = await _discussionRepository.GetByIdAsync(model.DiscussionId, true, "DiscussionRatings");
+        if (discussion == null) throw new NotFoundException<Discussion>();
+
+        discussion.DiscussionRatings ??= new List<DiscussionRating>();
+        discussion.DiscussionRatings.Add(new DiscussionRating
+        {
+            Rate = model.Rate,
+            UserId = userId,
+            DiscussionId = model.DiscussionId
+        });
+
+        await _discussionRepository.SaveAsync();
+        return true;
+    }
+
+    private int _calcRate(IEnumerable<DiscussionRating>? ratings)
+    {
+        if (ratings == null) return 0;
+        var rate = ratings.Sum(rating => rating.Rate == Rates.Up ? 1 : -1);
+        return rate < 0 ? 0 : rate;
+    }
 }

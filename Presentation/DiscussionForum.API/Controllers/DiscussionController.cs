@@ -25,14 +25,14 @@ public class DiscussionController:ControllerBase
     }
 
     [HttpGet("communityId")]
-    public async Task<IActionResult> GetAllOfCommunity(Guid communityId, int skip, int take)
+    public async Task<IActionResult> GetAllOfCommunity(Guid communityId, int skip = 0, int take = 50)
     {
         var discussions = await _discussionService.GetAllOfCommunityAsync(communityId, skip, take);
         return Ok(discussions);
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetAll(int skip, int take)
+    public async Task<IActionResult> GetAll(int skip = 0, int take = 50)
     {
         var discussions = await _discussionService.GetAllAsync(skip, take);
         return Ok(discussions);
@@ -59,6 +59,15 @@ public class DiscussionController:ControllerBase
     public async Task<IActionResult> Delete(Guid id)
     {
         await _discussionService.DeleteAsync(id);
+        return Ok();
+    }
+
+    [HttpPost]
+    [Route("Rate")]
+    [Authorize]
+    public async Task<IActionResult> Rate([FromBody] RateDiscussionDto dto)
+    {
+        await _discussionService.RateAsync(dto);
         return Ok();
     }
 }

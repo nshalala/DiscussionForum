@@ -10,6 +10,6 @@ public class Discussion : BaseEntity
     public User User { get; set; }
     public Guid CommunityId { get; set; }
     public Community Community { get; set; }
-    public int Rating { get; set; }
+    public List<DiscussionRating>? DiscussionRatings { get; set; }
     public List<Comment>? Comments { get; set; }
 }

@@ -71,9 +71,6 @@ namespace DiscussionForum.Persistence.Migrations
                     b.Property<Guid?>("ParentId")
                         .HasColumnType("uuid");
 
-                    b.Property<int>("Rating")
-                        .HasColumnType("integer");
-
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
@@ -86,6 +83,33 @@ namespace DiscussionForum.Persistence.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("DiscussionForum.Domain.Entities.CommentRating", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CommentId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Rate")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CommentId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("CommentRatings");
                 });
 
             modelBuilder.Entity("DiscussionForum.Domain.Entities.Community", b =>
@@ -116,7 +140,7 @@ namespace DiscussionForum.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("CommunityId")
+                    b.Property<Guid>("CommunityId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
@@ -124,9 +148,6 @@ namespace DiscussionForum.Persistence.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -142,6 +163,33 @@ namespace DiscussionForum.Persistence.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Discussions");
+                });
+
+            modelBuilder.Entity("DiscussionForum.Domain.Entities.DiscussionRating", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("DiscussionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Rate")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DiscussionId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("DiscussionRatings");
                 });
 
             modelBuilder.Entity("DiscussionForum.Domain.Entities.User", b =>
@@ -244,11 +292,32 @@ namespace DiscussionForum.Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("DiscussionForum.Domain.Entities.CommentRating", b =>
+                {
+                    b.HasOne("DiscussionForum.Domain.Entities.Comment", "Comment")
+                        .WithMany("CommentRatings")
+                        .HasForeignKey("CommentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DiscussionForum.Domain.Entities.User", "User")
+                        .WithMany("CommentRatings")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Comment");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DiscussionForum.Domain.Entities.Discussion", b =>
                 {
                     b.HasOne("DiscussionForum.Domain.Entities.Community", "Community")
                         .WithMany("Discussions")
-                        .HasForeignKey("CommunityId");
+                        .HasForeignKey("CommunityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("DiscussionForum.Domain.Entities.User", "User")
                         .WithMany("Discussions")
@@ -261,9 +330,30 @@ namespace DiscussionForum.Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("DiscussionForum.Domain.Entities.DiscussionRating", b =>
+                {
+                    b.HasOne("DiscussionForum.Domain.Entities.Discussion", "Discussion")
+                        .WithMany("DiscussionRatings")
+                        .HasForeignKey("DiscussionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DiscussionForum.Domain.Entities.User", "User")
+                        .WithMany("DiscussionRatings")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Discussion");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DiscussionForum.Domain.Entities.Comment", b =>
                 {
                     b.Navigation("Children");
+
+                    b.Navigation("CommentRatings");
                 });
 
             modelBuilder.Entity("DiscussionForum.Domain.Entities.Community", b =>
@@ -274,11 +364,17 @@ namespace DiscussionForum.Persistence.Migrations
             modelBuilder.Entity("DiscussionForum.Domain.Entities.Discussion", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("DiscussionRatings");
                 });
 
             modelBuilder.Entity("DiscussionForum.Domain.Entities.User", b =>
                 {
+                    b.Navigation("CommentRatings");
+
                     b.Navigation("Comments");
+
+                    b.Navigation("DiscussionRatings");
 
                     b.Navigation("Discussions");
                 });

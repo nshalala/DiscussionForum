@@ -18,4 +18,6 @@ public class User : BaseEntity
     public List<Community>? CommunitiesAsMember { get; set; }
     public List<Discussion>? Discussions { get; set; }
     public List<Comment>? Comments { get; set; }
+    public List<DiscussionRating>? DiscussionRatings { get; set; }
+    public List<CommentRating>? CommentRatings { get; set; }
 }

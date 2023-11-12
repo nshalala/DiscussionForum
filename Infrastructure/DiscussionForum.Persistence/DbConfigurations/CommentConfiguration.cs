@@ -4,15 +4,16 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DiscussionForum.Persistence.DbConfigurations;
 
-public class CommentConfiguration:IEntityTypeConfiguration<Comment>
+public class CommentConfiguration : IEntityTypeConfiguration<Comment>
 {
     public void Configure(EntityTypeBuilder<Comment> builder)
     {
         builder.Property(c => c.Content)
             .IsRequired()
             .HasMaxLength(500);
-        builder.Property(c => c.Rating)
-            .HasDefaultValue(0);
+        builder.HasMany(c => c.CommentRatings)
+            .WithOne(cr => cr.Comment)
+            .HasForeignKey(cr => cr.CommentId);
         builder.HasOne(c => c.Discussion)
             .WithMany(d => d.Comments)
             .HasForeignKey(c => c.DiscussionId);

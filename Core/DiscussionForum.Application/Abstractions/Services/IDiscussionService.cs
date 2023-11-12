@@ -12,4 +12,5 @@ public interface IDiscussionService
     Task<bool> CreateAsync(CreateDiscussionDto model);
     Task<bool> UpdateAsync(UpdateDiscussionDto model);
     Task<bool> DeleteAsync(Guid id);
+    Task<bool> RateAsync(RateDiscussionDto model);
 }

@@ -14,14 +14,11 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
     private readonly DiscussionForumDbContext _context;
     private readonly IHttpContextAccessor _contextAccessor;
 
-    public Repository(IHttpContextAccessor contextAccessor)
-    {
-        _contextAccessor = contextAccessor;
-    }
 
-    public Repository(DiscussionForumDbContext context)
+    public Repository(DiscussionForumDbContext context, IHttpContextAccessor contextAccessor)
     {
         _context = context;
+        _contextAccessor = contextAccessor;
     }
 
     public DbSet<TEntity> Table => _context.Set<TEntity>();
