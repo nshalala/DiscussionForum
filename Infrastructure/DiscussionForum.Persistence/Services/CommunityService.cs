@@ -149,6 +149,22 @@ public class CommunityService : ICommunityService
         return true;
     }
 
+    public async Task<List<CommunityListDto>> GetJoinedCommunities()
+    {
+        var userId = GetUserId();
+        var user = await _userRepository.GetByIdAsync(userId, false, "CommunitiesAsMember");
+
+        return _mapper.Map<List<CommunityListDto>>(user.CommunitiesAsMember);
+    }
+
+    public async Task<List<CommunityListDto>> GetCreatedCommunities()
+    {
+        var userId = GetUserId();
+        var user = await _userRepository.GetByIdAsync(userId, false, "CommunitiesAsAdmin");
+
+        return _mapper.Map<List<CommunityListDto>>(user.CommunitiesAsAdmin);
+    }
+
     private Guid GetUserId()
     {
         var userId = _contextAccessor.HttpContext?.User.FindFirst(ClaimTypes.Sid)?.Value;

@@ -12,4 +12,7 @@ public interface ICommunityService
 
     Task<bool> JoinCommunityAsync(Guid communityId);
     Task<bool> LeaveCommunityAsync(Guid communityId);
+
+    Task<List<CommunityListDto>> GetJoinedCommunities();
+    Task<List<CommunityListDto>> GetCreatedCommunities();
 }

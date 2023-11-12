@@ -19,6 +19,7 @@ public class CommunityController:ControllerBase
 
     [HttpGet]
     [Route("GetAllCommunities")]
+    [AllowAnonymous]
     public async Task<IActionResult> GetAllCommunities(int skip = 0, int take = 50)
     {
         var communities = await _communityService.GetAllAsync(skip, take);
@@ -27,6 +28,7 @@ public class CommunityController:ControllerBase
 
     [HttpGet]
     [Route("GetCommunityById")]
+    [AllowAnonymous]
 
     public async Task<IActionResult> GetCommunityById(Guid id)
     {
@@ -68,5 +70,19 @@ public class CommunityController:ControllerBase
     public async Task<IActionResult> LeaveCommunity(Guid communityId)
     {
         return Ok(await _communityService.LeaveCommunityAsync(communityId));
+    }
+    
+    [HttpGet]
+    [Route("GetJoinedCommunities")]
+    public async Task<IActionResult> GetJoinedCommunities()
+    {
+        return Ok(await _communityService.GetJoinedCommunities());
+    }
+    
+    [HttpGet]
+    [Route("GetCreatedCommunities")]
+    public async Task<IActionResult> GetCreatedCommunities()
+    {
+        return Ok(await _communityService.GetCreatedCommunities());
     }
 }
