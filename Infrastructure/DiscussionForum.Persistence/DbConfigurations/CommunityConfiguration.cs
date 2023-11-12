@@ -11,9 +11,8 @@ public class CommunityConfiguration:IEntityTypeConfiguration<Community>
         builder.Property(c => c.Name)
             .IsRequired()
             .HasMaxLength(30);
-        builder.HasOne(c => c.Admin)
-            .WithMany(u => u.CommunitiesAsAdmin)
-            .HasForeignKey(c => c.AdminId);
+        builder.HasMany(c => c.AdminUsers)
+            .WithMany(u => u.CommunitiesAsAdmin);
         builder.HasMany(c => c.Members)
             .WithMany(u => u.CommunitiesAsMember);
         builder.HasMany(c => c.Discussions)

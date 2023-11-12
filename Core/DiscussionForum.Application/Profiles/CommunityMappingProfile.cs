@@ -8,8 +8,10 @@ public class CommunityMappingProfile : Profile
 {
     public CommunityMappingProfile()
     {
-        CreateMap<Community, CommunityDetailDto>();
-        CreateMap<Community, CommunityListDto>();
+        CreateMap<Community, CommunityDetailDto>()
+            .ForMember(dto => dto.MemberCount, src => src.MapFrom(c => c.Members!.Count));
+        CreateMap<Community, CommunityListDto>()
+            .ForMember(dto => dto.MemberCount, src => src.MapFrom(c => c.Members!.Count));
         CreateMap<CreateCommunityDto, Community>();
         CreateMap<UpdateCommunityDto, Community>();
     }

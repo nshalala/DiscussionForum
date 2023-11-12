@@ -30,32 +30,45 @@ public class CommunityService : ICommunityService
     {
         if (skip < 0 || take < 0) throw new ArgumentOutOfRangeException("skip or take cannot be negative");
 
-        var communities = await _communityRepository.GetAll(skip, take, false).ToListAsync();
-        return _mapper.Map<List<CommunityListDto>>(communities);
+        var communities = await _communityRepository.GetAll(skip, take, false, "Members").ToListAsync();
+        var dtos = _mapper.Map<List<CommunityListDto>>(communities);
+        return dtos;
     }
 
     public async Task<CommunityDetailDto> GetByIdAsync(Guid id)
     {
-        var community = await _communityRepository.GetByIdAsync(id);
+        var community = await _communityRepository.GetByIdAsync(id, false, "Members", "AdminUsers");
         if (community == null) throw new NotFoundException<Community>();
         return _mapper.Map<CommunityDetailDto>(community);
     }
 
+    public Task<List<CommunityListDto>> GetJoinedCommunitiesAsync(int skip, int take)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<List<CommunityListDto>> GetCreatedCommunitiesAsync(int skip, int take)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<bool> CreateAsync(CreateCommunityDto model)
     {
-        var adminId = _contextAccessor.HttpContext?.User.FindFirst(ClaimTypes.Sid)?.Value;
-        if (adminId == null)
-            throw new Exception("You need to log in to create a community");
+        var adminId = GetUserId();
 
-        if (!await _userRepository.IsExistAsync(u => u.Id == Guid.Parse(adminId)))
+        if (!await _userRepository.IsExistAsync(u => u.Id == adminId))
             throw new NotFoundException<User>();
 
         if (await _communityRepository.IsExistAsync(c => c.Name == model.Name))
             throw new UnavailableNameException();
 
-
         var community = _mapper.Map<Community>(model);
-        community.AdminId = Guid.Parse(adminId);
+        var admin = await _userRepository.GetByIdAsync(adminId);
+
+        community.AdminUsers.Add(admin);
+
+        community.Members.Add(admin);
+
         var response = await _communityRepository.AddAsync(community);
         await _communityRepository.SaveAsync();
         return response;
@@ -68,24 +81,25 @@ public class CommunityService : ICommunityService
         var community = await _communityRepository.GetByIdAsync(model.Id);
         if (community == null) throw new NotFoundException<Community>();
 
-        if (userId != community.AdminId)
+        if (community.AdminUsers.All(a => a.Id != userId))
             throw new UnauthorizedAccessException();
 
         if (await _communityRepository.IsExistAsync(c => c.Name == model.Name))
             throw new UnavailableNameException();
-        var res = _mapper.Map(model, community);
 
+        community = _mapper.Map(model, community);
         await _communityRepository.SaveAsync();
-        return res != null;
+        return true;
     }
 
     public async Task<bool> DeleteAsync(Guid id)
     {
         var userId = GetUserId();
+
         var community = await _communityRepository.GetByIdAsync(id);
         if (community == null) throw new NotFoundException<Community>();
 
-        if (userId != community.AdminId)
+        if (community.AdminUsers.All(a => a.Id != userId))
             throw new UnauthorizedAccessException();
 
         var res = _communityRepository.Remove(community);
@@ -96,19 +110,18 @@ public class CommunityService : ICommunityService
     public async Task<bool> JoinCommunityAsync(Guid communityId)
     {
         var userId = GetUserId();
-        var community = await _communityRepository.Table.Include(c => c.Members)
-            .SingleOrDefaultAsync(c => c.Id == communityId);
 
+        var community = _communityRepository.GetByIdAsync(communityId, true, "Members");
         if (community == null)
             throw new NotFoundException<Community>();
 
-        if(community.Members != null && community.Members.Any(m => m.Id == userId))
+        if (community.Members.Any(m => m.Id == userId))
             throw new Exception("user is already a member");
 
         var user = await _userRepository.GetByIdAsync(userId);
         if (user == null)
             throw new NotFoundException<User>();
-        
+
         community.Members.Add(user);
         await _communityRepository.SaveAsync();
         return true;
@@ -123,9 +136,9 @@ public class CommunityService : ICommunityService
         if (community == null)
             throw new NotFoundException<Community>();
 
-        if(community.Members == null || community.Members.All(m => m.Id != userId))
+        if (community.Members == null || community.Members.All(m => m.Id != userId))
             throw new Exception("user is not a member");
-        
+
         var user = await _userRepository.GetByIdAsync(userId);
         if (user == null)
             throw new NotFoundException<User>();
