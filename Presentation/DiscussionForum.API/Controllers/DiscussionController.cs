@@ -30,7 +30,14 @@ public class DiscussionController:ControllerBase
         var discussions = await _discussionService.GetAllOfCommunityAsync(communityId, skip, take);
         return Ok(discussions);
     }
-    
+
+    [HttpGet("userId")]
+    public async Task<IActionResult> GetAllOfUser(Guid userId, int skip = 0, int take = 50)
+    {
+        var discussions = await _discussionService.GetAllOfUserAsync(userId, skip, take);
+        return Ok(discussions);
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetAll(int skip = 0, int take = 50)
     {

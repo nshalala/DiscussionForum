@@ -56,6 +56,21 @@ public class DiscussionService : IDiscussionService
         return dtos;
     }
 
+    public async Task<List<DiscussionListDto>> GetAllOfUserAsync(Guid userId, int skip, int take)
+    {
+        if (skip < 0 || take < 0) throw new ArgumentOutOfRangeException("skip or take cannot be negative");
+
+        var discussions = await _discussionRepository.GetWhere(d => d.UserId == userId, false, "Comments", "DiscussionRatings").Skip(skip).Take(take).ToListAsync();
+        var dtos = _mapper.Map<List<DiscussionListDto>>(discussions);
+        for (int i = 0; i < dtos.Count; i++)
+        {
+            dtos[i].CommentCount = discussions[i].Comments?.Count ?? 0;
+            dtos[i].Rating = _calcRate(discussions[i].DiscussionRatings);
+        }
+
+        return dtos;
+    }
+
     public async Task<DiscussionDetailDto> GetByIdAsync(Guid id)
     {
         var discussion = await _discussionRepository.GetByIdAsync(id, false, "User", "Community", "Comments", "DiscussionRatings");
