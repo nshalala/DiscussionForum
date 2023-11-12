@@ -1,11 +1,10 @@
-using System.Net.Mime;
-using System.Security.Claims;
 using AutoMapper;
 using DiscussionForum.Application.Abstractions.Services;
 using DiscussionForum.Application.DTOs.Comment;
 using DiscussionForum.Application.Exceptions;
 using DiscussionForum.Application.Repositories;
 using DiscussionForum.Domain.Entities;
+using DiscussionForum.Domain.Enums;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +14,6 @@ public class CommentService : ICommentService
 {
     private readonly ICommentRepository _commentRepository;
     private readonly IDiscussionRepository _discussionRepository;
-    private readonly IHttpContextAccessor _contextAccessor;
     private readonly IMapper _mapper;
 
     public CommentService(ICommentRepository commentRepository, IMapper mapper,
@@ -24,53 +22,55 @@ public class CommentService : ICommentService
         _commentRepository = commentRepository;
         _mapper = mapper;
         _discussionRepository = discussionRepository;
-        _contextAccessor = contextAccessor;
     }
 
     public async Task<List<CommentListDto>> GetAllOfDiscussionAsync(Guid discussionId)
     {
-        var query = _commentRepository.GetWhere(c => c.DiscussionId == discussionId, false);
-        var comments = await query.Include(c => c.Children).ToListAsync();
-        
+        var comments = await _commentRepository.GetWhere(c => c.DiscussionId == discussionId, false, "Children", "CommentRatings").ToListAsync();
         if (comments == null)
             throw new NotFoundException<Discussion>();
-
-        var commentsList = _mapper.Map<List<CommentListDto>>(comments);
-            
-        return commentsList;
+        var dtos = _mapper.Map<List<CommentListDto>>(comments);
+        for (int i = 0; i < dtos.Count; i++)
+        {
+            dtos[i].Rating = _calcRate(comments[i].CommentRatings);
+        }
+        return dtos;
     }
 
     public async Task<List<CommentListDto>> GetAllOfUserAsync(Guid userId)
     {
-        var query = _commentRepository.GetWhere(c => c.UserId == userId, false);
-        var comments = await query.Include(c => c.Children).ToListAsync();
-
+        var comments = await _commentRepository.GetWhere(c => c.UserId == userId, false, "User", "Comment", "CommentRatings")
+            .ToListAsync();
         if (comments == null)
             throw new NotFoundException<User>();
-
-        return _mapper.Map<List<CommentListDto>>(comments);
+        var dtos = _mapper.Map<List<CommentListDto>>(comments);
+        for (int i = 0; i < dtos.Count; i++)
+        {
+            dtos[i].Rating = _calcRate(comments[i].CommentRatings);
+        }
+        return dtos;
     }
 
     public async Task<CommentDetailDto> GetByIdAsync(Guid id)
     {
-        var comment = await _commentRepository.GetByIdAsync(id, false);
+        var comment = await _commentRepository.GetByIdAsync(id, false, "User", "Comment", "CommentRatings");
         if (comment == null)
             throw new NotFoundException<Comment>();
-        return _mapper.Map<CommentDetailDto>(comment);
+        var dto = _mapper.Map<CommentDetailDto>(comment);
+        dto.Rating = _calcRate(comment.CommentRatings);
+        return dto;
     }
 
     public async Task<bool> CreateAsync(CreateCommentDto model)
     {
-        var userId = _contextAccessor.HttpContext?.User.FindFirst(ClaimTypes.Sid)?.Value;
-        if (userId == null)
-            throw new Exception("Log in to comment");
+        var userId = _commentRepository.GetUserId();
         var discussion = await _discussionRepository.GetByIdAsync(model.DiscussionId);
         if (discussion == null)
             throw new NotFoundException<Discussion>();
 
         var comment = _mapper.Map<Comment>(model);
-        comment.UserId = Guid.Parse(userId);
-        
+        comment.UserId = userId;
+
         var response = await _commentRepository.AddAsync(comment);
         await _commentRepository.SaveAsync();
         return response;
@@ -78,12 +78,40 @@ public class CommentService : ICommentService
 
     public async Task<bool> DeleteAsync(Guid id)
     {
+        var userId = _commentRepository.GetUserId();
+
         var comment = await _commentRepository.GetByIdAsync(id);
         if (comment == null)
             throw new NotFoundException<Comment>();
 
+        var discussion =
+            await _discussionRepository.GetByIdAsync(comment.DiscussionId, true, "Community", "AdminUsers");
+        if (userId != comment.UserId && userId != discussion.UserId &&
+            discussion.Community.AdminUsers.All(u => u.Id != userId)) throw new UnauthorizedAccessException();
+
         _commentRepository.Remove(comment);
         await _commentRepository.SaveAsync();
         return true;
+    }
+
+    public async Task<bool> RateAsync(RateCommentDto model)
+    {
+        var userId = _commentRepository.GetUserId();
+        var comment = await _commentRepository.GetByIdAsync(model.CommentId, true, "CommentRatings");
+        comment.CommentRatings ??= new List<CommentRating>();
+        comment.CommentRatings.Add(new CommentRating
+        {
+            Rate = model.Rate,
+            UserId = userId
+        });
+        await _commentRepository.SaveAsync();
+        return true;
+    }
+
+    private int _calcRate(IEnumerable<CommentRating>? ratings)
+    {
+        if (ratings == null) return 0;
+        var rate = ratings.Sum(rating => rating.Rate == Rates.Up ? 1 : -1);
+        return rate < 0 ? 0 : rate;
     }
 }

@@ -45,8 +45,7 @@ public class DiscussionService : IDiscussionService
     {
         if (skip < 0 || take < 0) throw new ArgumentOutOfRangeException("skip or take cannot be negative");
 
-        var discussions = await _discussionRepository.GetWhere(d => d.CommunityId == communityId).Include("Community")
-            .Include("Comments").Include("DiscussionRatings").Skip(skip).Take(take).ToListAsync();
+        var discussions = await _discussionRepository.GetWhere(d => d.CommunityId == communityId, false,  "Community", "Comments", "DiscussionRatings").Skip(skip).Take(take).ToListAsync();
         var dtos = _mapper.Map<List<DiscussionListDto>>(discussions);
         for (int i = 0; i < dtos.Count; i++)
         {

@@ -52,4 +52,13 @@ public class CommentController : ControllerBase
         await _commentService.DeleteAsync(id);
         return Ok();
     }
+
+    [HttpPost]
+    [Route("Rate")]
+    [Authorize]
+    public async Task<IActionResult> Rate(RateCommentDto dto)
+    {
+        await _commentService.RateAsync(dto);
+        return Ok();
+    }
 }

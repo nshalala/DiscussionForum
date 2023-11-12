@@ -9,4 +9,5 @@ public interface ICommentService
     Task<CommentDetailDto> GetByIdAsync(Guid id);
     Task<bool> CreateAsync(CreateCommentDto model);
     Task<bool> DeleteAsync(Guid id);
+    Task<bool> RateAsync(RateCommentDto model);
 }
