@@ -1,3 +1,4 @@
+using DiscussionForum.Application.DTOs.Discussion;
 using FluentValidation;
 
 namespace DiscussionForum.Application.Validators.DiscussionValidators;

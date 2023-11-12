@@ -1,4 +1,5 @@
 using AutoMapper;
+using DiscussionForum.Application.DTOs.Discussion;
 using DiscussionForum.Application.Validators.DiscussionValidators;
 using DiscussionForum.Domain.Entities;
 

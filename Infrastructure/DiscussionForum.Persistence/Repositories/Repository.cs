@@ -1,7 +1,9 @@
 using System.Linq.Expressions;
+using System.Security.Claims;
 using DiscussionForum.Application.Repositories;
 using DiscussionForum.Domain.Entities.Common;
 using DiscussionForum.Persistence.Contexts;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -10,6 +12,12 @@ namespace DiscussionForum.Persistence.Repositories;
 public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
 {
     private readonly DiscussionForumDbContext _context;
+    private readonly IHttpContextAccessor _contextAccessor;
+
+    public Repository(IHttpContextAccessor contextAccessor)
+    {
+        _contextAccessor = contextAccessor;
+    }
 
     public Repository(DiscussionForumDbContext context)
     {
@@ -50,6 +58,14 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
     public async Task<bool> IsExistAsync(Expression<Func<TEntity, bool>> expression)
     {
         return await Table.AnyAsync(expression);
+    }
+
+    public Guid GetUserId()
+    {
+        var userId = _contextAccessor.HttpContext?.User.FindFirst(ClaimTypes.Sid)?.Value;
+        if (userId == null)
+            throw new Exception("Log in");
+        return Guid.Parse(userId);
     }
 
     public async Task<bool> AddAsync(TEntity entity)

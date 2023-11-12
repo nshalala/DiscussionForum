@@ -15,7 +15,6 @@ public class CommunityService : ICommunityService
     private readonly ICommunityRepository _communityRepository;
     private readonly IUserRepository _userRepository;
     private readonly IMapper _mapper;
-    private readonly IHttpContextAccessor _contextAccessor;
 
     public CommunityService(ICommunityRepository communityRepository, IMapper mapper, IUserRepository userRepository,
         IHttpContextAccessor contextAccessor)
@@ -23,7 +22,6 @@ public class CommunityService : ICommunityService
         _communityRepository = communityRepository;
         _mapper = mapper;
         _userRepository = userRepository;
-        _contextAccessor = contextAccessor;
     }
 
     public async Task<List<CommunityListDto>> GetAllAsync(int skip, int take)
@@ -44,7 +42,7 @@ public class CommunityService : ICommunityService
 
     public async Task<bool> CreateAsync(CreateCommunityDto model)
     {
-        var adminId = GetUserId();
+        var adminId = _communityRepository.GetUserId();
 
         if (!await _userRepository.IsExistAsync(u => u.Id == adminId))
             throw new NotFoundException<User>();
@@ -70,7 +68,7 @@ public class CommunityService : ICommunityService
 
     public async Task<bool> UpdateAsync(UpdateCommunityDto model)
     {
-        var userId = GetUserId();
+        var userId = _communityRepository.GetUserId();
 
         var community = await _communityRepository.GetByIdAsync(model.Id, true, "AdminUsers");
         if (community == null) throw new NotFoundException<Community>();
@@ -81,14 +79,14 @@ public class CommunityService : ICommunityService
         if (await _communityRepository.IsExistAsync(c => c.Name == model.Name))
             throw new UnavailableNameException();
 
-        community = _mapper.Map(model, community);
+        _mapper.Map(model, community);
         await _communityRepository.SaveAsync();
         return true;
     }
 
     public async Task<bool> DeleteAsync(Guid id)
     {
-        var userId = GetUserId();
+        var userId = _communityRepository.GetUserId();
 
         var community = await _communityRepository.GetByIdAsync(id, true, "AdminUsers");
         if (community == null) throw new NotFoundException<Community>();
@@ -103,7 +101,7 @@ public class CommunityService : ICommunityService
 
     public async Task<bool> JoinCommunityAsync(Guid communityId)
     {
-        var userId = GetUserId();
+        var userId = _communityRepository.GetUserId();
 
         var community = await _communityRepository.GetByIdAsync(communityId, true, "Members");
         if (community == null)
@@ -123,7 +121,7 @@ public class CommunityService : ICommunityService
 
     public async Task<bool> LeaveCommunityAsync(Guid communityId)
     {
-        var userId = GetUserId();
+        var userId = _communityRepository.GetUserId();
 
         var community = await _communityRepository.GetByIdAsync(communityId, true, "Members", "AdminUsers");
 
@@ -151,7 +149,7 @@ public class CommunityService : ICommunityService
 
     public async Task<List<CommunityListDto>> GetJoinedCommunities()
     {
-        var userId = GetUserId();
+        var userId = _communityRepository.GetUserId();
         var user = await _userRepository.GetByIdAsync(userId, false, "CommunitiesAsMember");
 
         return _mapper.Map<List<CommunityListDto>>(user.CommunitiesAsMember);
@@ -159,17 +157,10 @@ public class CommunityService : ICommunityService
 
     public async Task<List<CommunityListDto>> GetCreatedCommunities()
     {
-        var userId = GetUserId();
+        var userId = _communityRepository.GetUserId();
         var user = await _userRepository.GetByIdAsync(userId, false, "CommunitiesAsAdmin");
 
         return _mapper.Map<List<CommunityListDto>>(user.CommunitiesAsAdmin);
     }
 
-    private Guid GetUserId()
-    {
-        var userId = _contextAccessor.HttpContext?.User.FindFirst(ClaimTypes.Sid)?.Value;
-        if (userId == null)
-            throw new Exception("Log in");
-        return Guid.Parse(userId);
-    }
 }

@@ -1,7 +1,7 @@
-using DiscussionForum.Domain.Entities;
 
 namespace DiscussionForum.Application.DTOs.User;
 
+using DiscussionForum.Domain.Entities;
 public record UserDetailDto
 {
     public DateTime CreatedAt { get; set; }
@@ -11,5 +11,5 @@ public record UserDetailDto
     public int DiscussionsCount { get; set; }
     public int CommentsCount { get; set; }
     public List<Discussion>? Discussions { get; set; }
-    public List<Domain.Entities.Comment> Comments { get; set; }
+    public List<Comment> Comments { get; set; }
 }

@@ -9,10 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54195741-978e-4237-8fc5-8238262d9280" name="Changes" comment="updated userService">
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/ICommunityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/ICommunityService.cs" afterDir="false" />
+    <list default="true" id="54195741-978e-4237-8fc5-8238262d9280" name="Changes" comment="updated communityService">
+      <change afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/Enums/Rates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/IDiscussionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/IDiscussionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Discussion/CreateDiscussionDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Discussion/CreateDiscussionDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Discussion/DiscussionDetailDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Discussion/DiscussionDetailDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Discussion/DiscussionListDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Discussion/DiscussionListDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Discussion/UpdateDiscussionDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Discussion/UpdateDiscussionDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/User/UserDetailDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/User/UserDetailDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/Profiles/DiscussionMappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/Profiles/DiscussionMappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/Repositories/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/Validators/DiscussionValidators/CreateDiscussionDtoValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/Validators/DiscussionValidators/CreateDiscussionDtoValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/Entities/Discussion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/Entities/Discussion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Repositories/Repository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommunityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommunityService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/Controllers/CommunityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/Controllers/CommunityController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/DiscussionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/DiscussionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/Controllers/DiscussionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/Controllers/DiscussionController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +45,7 @@
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Domain/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Contexts/DiscussionForumDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommunityService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/fscod/RiderProjects/DiscussionForum/Presentation/DiscussionForum.API/Controllers/CommunityController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/DiscussionForum.API/Controllers/CommunityController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/DiscussionForum.API/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/DiscussionForum.API/appsettings.json" root0="FORCE_HIGHLIGHTING" />
@@ -235,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699789473945</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="updated communityService">
+      <option name="closed" value="true" />
+      <created>1699790539379</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699790539379</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,22 +317,22 @@
     <MESSAGE value="main part done" />
     <MESSAGE value="modified" />
     <MESSAGE value="updated" />
-    <MESSAGE value="updated communityService" />
     <MESSAGE value="updated userService" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated userService" />
+    <MESSAGE value="updated communityService" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated communityService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommunityService.cs</url>
-          <line>89</line>
+          <line>88</line>
           <properties documentPath="C:\Users\fscod\RiderProjects\DiscussionForum\Infrastructure\DiscussionForum.Persistence\Services\CommunityService.cs" initialLine="89" containingFunctionPresentation="Method 'DeleteAsync'">
             <startOffsets>
-              <option value="3279" />
+              <option value="3219" />
             </startOffsets>
             <endOffsets>
-              <option value="3280" />
+              <option value="3220" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />

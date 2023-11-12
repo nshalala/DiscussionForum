@@ -1,4 +1,6 @@
+using DiscussionForum.Application.DTOs.Discussion;
 using DiscussionForum.Application.Validators.DiscussionValidators;
+using DiscussionForum.Domain.Enums;
 
 namespace DiscussionForum.Application.Abstractions.Services;
 

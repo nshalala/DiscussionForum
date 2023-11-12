@@ -1,5 +1,7 @@
 using DiscussionForum.Application.Abstractions.Services;
+using DiscussionForum.Application.DTOs.Discussion;
 using DiscussionForum.Application.Validators.DiscussionValidators;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiscussionForum.API.Controllers;
@@ -37,6 +39,7 @@ public class DiscussionController:ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> Create([FromBody] CreateDiscussionDto dto)
     {
         await _discussionService.CreateAsync(dto);
@@ -44,6 +47,7 @@ public class DiscussionController:ControllerBase
     }
 
     [HttpPut]
+    [Authorize]
     public async Task<IActionResult> Update([FromBody] UpdateDiscussionDto dto)
     {
         await _discussionService.UpdateAsync(dto);
@@ -51,6 +55,7 @@ public class DiscussionController:ControllerBase
     }
 
     [HttpDelete("id")]
+    [Authorize]
     public async Task<IActionResult> Delete(Guid id)
     {
         await _discussionService.DeleteAsync(id);
