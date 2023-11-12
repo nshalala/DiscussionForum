@@ -1,4 +1,5 @@
 using AutoMapper;
+using DiscussionForum.Application.DTOs.Community;
 using DiscussionForum.Application.DTOs.User;
 using DiscussionForum.Domain.Entities;
 
@@ -10,6 +11,7 @@ public class UserMappingProfile : Profile
     {
         CreateMap<User, UserListDto>();
         CreateMap<User, UserDetailDto>();
+        CreateMap<User, AdminUsersListDto>();
         CreateMap<RegisterUserDto, User>();
     }
 }

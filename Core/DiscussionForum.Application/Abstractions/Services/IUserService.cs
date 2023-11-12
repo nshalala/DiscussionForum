@@ -1,3 +1,4 @@
+using DiscussionForum.Application.DTOs.Community;
 using DiscussionForum.Application.DTOs.User;
 using DiscussionForum.Domain.Entities;
 

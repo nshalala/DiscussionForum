@@ -26,7 +26,7 @@ public class CommunityService : ICommunityService
         _contextAccessor = contextAccessor;
     }
 
-    public async Task<List<CommunityListDto>> GetAllAsync(int take, int skip = 0)
+    public async Task<List<CommunityListDto>> GetAllAsync(int skip, int take)
     {
         if (skip < 0 || take < 0) throw new ArgumentOutOfRangeException("skip or take cannot be negative");
 
@@ -42,16 +42,6 @@ public class CommunityService : ICommunityService
         return _mapper.Map<CommunityDetailDto>(community);
     }
 
-    public Task<List<CommunityListDto>> GetJoinedCommunitiesAsync(int skip, int take)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<List<CommunityListDto>> GetCreatedCommunitiesAsync(int skip, int take)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task<bool> CreateAsync(CreateCommunityDto model)
     {
         var adminId = GetUserId();
@@ -65,9 +55,13 @@ public class CommunityService : ICommunityService
         var community = _mapper.Map<Community>(model);
         var admin = await _userRepository.GetByIdAsync(adminId);
 
-        community.AdminUsers.Add(admin);
+        community.AdminUsers = new List<User>();
+        community.Members = new List<User>();
 
+        community.AdminUsers.Add(admin);
         community.Members.Add(admin);
+
+        community.CreatedAt = DateTime.UtcNow;
 
         var response = await _communityRepository.AddAsync(community);
         await _communityRepository.SaveAsync();
@@ -78,7 +72,7 @@ public class CommunityService : ICommunityService
     {
         var userId = GetUserId();
 
-        var community = await _communityRepository.GetByIdAsync(model.Id);
+        var community = await _communityRepository.GetByIdAsync(model.Id, true, "AdminUsers");
         if (community == null) throw new NotFoundException<Community>();
 
         if (community.AdminUsers.All(a => a.Id != userId))
@@ -96,7 +90,7 @@ public class CommunityService : ICommunityService
     {
         var userId = GetUserId();
 
-        var community = await _communityRepository.GetByIdAsync(id);
+        var community = await _communityRepository.GetByIdAsync(id, true, "AdminUsers");
         if (community == null) throw new NotFoundException<Community>();
 
         if (community.AdminUsers.All(a => a.Id != userId))
@@ -111,7 +105,7 @@ public class CommunityService : ICommunityService
     {
         var userId = GetUserId();
 
-        var community = _communityRepository.GetByIdAsync(communityId, true, "Members");
+        var community = await _communityRepository.GetByIdAsync(communityId, true, "Members");
         if (community == null)
             throw new NotFoundException<Community>();
 
@@ -130,14 +124,21 @@ public class CommunityService : ICommunityService
     public async Task<bool> LeaveCommunityAsync(Guid communityId)
     {
         var userId = GetUserId();
-        var community = await _communityRepository.Table.Include(c => c.Members)
-            .SingleOrDefaultAsync(c => c.Id == communityId);
+
+        var community = await _communityRepository.GetByIdAsync(communityId, true, "Members", "AdminUsers");
 
         if (community == null)
             throw new NotFoundException<Community>();
 
-        if (community.Members == null || community.Members.All(m => m.Id != userId))
+        if (community.Members.All(m => m.Id != userId))
             throw new Exception("user is not a member");
+
+        if (community.Members.Count == 1 && community.AdminUsers.Any(a => a.Id == userId))
+        {
+            _communityRepository.Remove(community);
+            await _communityRepository.SaveAsync();
+            return true;
+        }
 
         var user = await _userRepository.GetByIdAsync(userId);
         if (user == null)

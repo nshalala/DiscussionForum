@@ -1,11 +1,13 @@
 using DiscussionForum.Application.Abstractions.Services;
 using DiscussionForum.Application.DTOs.Community;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiscussionForum.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class CommunityController:ControllerBase
 {
     private readonly ICommunityService _communityService;
@@ -16,20 +18,24 @@ public class CommunityController:ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAllCommunities(int skip, int take)
+    [Route("GetAllCommunities")]
+    public async Task<IActionResult> GetAllCommunities(int skip = 0, int take = 50)
     {
         var communities = await _communityService.GetAllAsync(skip, take);
         return Ok(communities);
     }
 
-    [HttpGet("id")]
-    public async Task<IActionResult> GetCommunity(Guid id)
+    [HttpGet]
+    [Route("GetCommunityById")]
+
+    public async Task<IActionResult> GetCommunityById(Guid id)
     {
         var community = await _communityService.GetByIdAsync(id);
         return Ok(community);
     }
 
     [HttpPost]
+    [Route("CreateCommunity")]
     public async Task<IActionResult> CreateCommunity([FromBody] CreateCommunityDto dto)
     {
         var response = await _communityService.CreateAsync(dto);
@@ -50,15 +56,17 @@ public class CommunityController:ControllerBase
         return Ok(response);
     }
 
-    // [HttpPost]
-    // public async Task<IActionResult> JoinCommunity(Guid communityId)
-    // {
-    //     return Ok(await _communityService.JoinCommunityAsync(communityId));
-    // }
-    //
-    // [HttpPost]
-    // public async Task<IActionResult> LeaveCommunity(Guid communityId)
-    // {
-    //     return Ok(await _communityService.LeaveCommunityAsync(communityId));
-    // }
+    [HttpPost]
+    [Route("JoinCommunity")]
+    public async Task<IActionResult> JoinCommunity(Guid communityId)
+    {
+        return Ok(await _communityService.JoinCommunityAsync(communityId));
+    }
+    
+    [HttpPost]
+    [Route("LeaveCommunity")]
+    public async Task<IActionResult> LeaveCommunity(Guid communityId)
+    {
+        return Ok(await _communityService.LeaveCommunityAsync(communityId));
+    }
 }
