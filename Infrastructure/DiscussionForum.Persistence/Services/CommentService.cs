@@ -14,19 +14,22 @@ public class CommentService : ICommentService
 {
     private readonly ICommentRepository _commentRepository;
     private readonly IDiscussionRepository _discussionRepository;
+    private readonly ICommentRatingRepository _commentRatingRepository;
     private readonly IMapper _mapper;
 
     public CommentService(ICommentRepository commentRepository, IMapper mapper,
-        IDiscussionRepository discussionRepository, IHttpContextAccessor contextAccessor)
+        IDiscussionRepository discussionRepository, ICommentRatingRepository commentRatingRepository)
     {
         _commentRepository = commentRepository;
         _mapper = mapper;
         _discussionRepository = discussionRepository;
+        _commentRatingRepository = commentRatingRepository;
     }
 
     public async Task<List<CommentListDto>> GetAllOfDiscussionAsync(Guid discussionId)
     {
-        var comments = await _commentRepository.GetWhere(c => c.DiscussionId == discussionId, false, "Children", "CommentRatings").ToListAsync();
+        var comments = await _commentRepository
+            .GetWhere(c => c.DiscussionId == discussionId, false, "Children", "CommentRatings").ToListAsync();
         if (comments == null)
             throw new NotFoundException<Discussion>();
         var dtos = _mapper.Map<List<CommentListDto>>(comments);
@@ -34,12 +37,14 @@ public class CommentService : ICommentService
         {
             dtos[i].Rating = _calcRate(comments[i].CommentRatings);
         }
+
         return dtos;
     }
 
     public async Task<List<CommentListDto>> GetAllOfUserAsync(Guid userId)
     {
-        var comments = await _commentRepository.GetWhere(c => c.UserId == userId, false, "User", "Comment", "CommentRatings")
+        var comments = await _commentRepository
+            .GetWhere(c => c.UserId == userId, false, "User", "Comment", "CommentRatings")
             .ToListAsync();
         if (comments == null)
             throw new NotFoundException<User>();
@@ -48,6 +53,7 @@ public class CommentService : ICommentService
         {
             dtos[i].Rating = _calcRate(comments[i].CommentRatings);
         }
+
         return dtos;
     }
 
@@ -99,11 +105,22 @@ public class CommentService : ICommentService
         var userId = _commentRepository.GetUserId();
         var comment = await _commentRepository.GetByIdAsync(model.CommentId, true, "CommentRatings");
         comment.CommentRatings ??= new List<CommentRating>();
-        comment.CommentRatings.Add(new CommentRating
+
+        var rating = await _commentRatingRepository.GetSingleAsync(cr => cr.UserId == userId);
+        if (rating != null)
         {
-            Rate = model.Rate,
-            UserId = userId
-        });
+            if (rating.Rate == model.Rate) _commentRatingRepository.Remove(rating);
+            else rating.Rate = rating.Rate == Rates.Up ? Rates.Down : Rates.Up;
+        }
+        else
+        {
+            comment.CommentRatings.Add(new CommentRating
+            {
+                Rate = model.Rate,
+                UserId = userId
+            });
+        }
+
         await _commentRepository.SaveAsync();
         return true;
     }

@@ -16,21 +16,24 @@ public class DiscussionService : IDiscussionService
 {
     private readonly IDiscussionRepository _discussionRepository;
     private readonly ICommunityRepository _communityRepository;
+    private readonly ICommentRatingRepository _commentRatingRepository;
     private readonly IMapper _mapper;
 
     public DiscussionService(IDiscussionRepository discussionRepository, IMapper mapper,
-        ICommunityRepository communityRepository, IHttpContextAccessor contextAccessor)
+        ICommunityRepository communityRepository, ICommentRatingRepository commentRatingRepository)
     {
         _discussionRepository = discussionRepository;
         _mapper = mapper;
         _communityRepository = communityRepository;
+        _commentRatingRepository = commentRatingRepository;
     }
 
     public async Task<List<DiscussionListDto>> GetAllAsync(int skip, int take)
     {
         if (skip < 0 || take < 0) throw new ArgumentOutOfRangeException("skip or take cannot be negative");
 
-        var discussions = await _discussionRepository.GetAll(skip, take, false, "Community", "Comments", "DiscussionRatings").ToListAsync();
+        var discussions = await _discussionRepository
+            .GetAll(skip, take, false, "Community", "Comments", "DiscussionRatings").ToListAsync();
 
         var dtos = _mapper.Map<List<DiscussionListDto>>(discussions);
         for (int i = 0; i < dtos.Count; i++)
@@ -38,6 +41,7 @@ public class DiscussionService : IDiscussionService
             dtos[i].CommentCount = discussions[i].Comments?.Count ?? 0;
             dtos[i].Rating = _calcRate(discussions[i].DiscussionRatings);
         }
+
         return dtos;
     }
 
@@ -45,7 +49,9 @@ public class DiscussionService : IDiscussionService
     {
         if (skip < 0 || take < 0) throw new ArgumentOutOfRangeException("skip or take cannot be negative");
 
-        var discussions = await _discussionRepository.GetWhere(d => d.CommunityId == communityId, false,  "Community", "Comments", "DiscussionRatings").Skip(skip).Take(take).ToListAsync();
+        var discussions = await _discussionRepository
+            .GetWhere(d => d.CommunityId == communityId, false, "Community", "Comments", "DiscussionRatings").Skip(skip)
+            .Take(take).ToListAsync();
         var dtos = _mapper.Map<List<DiscussionListDto>>(discussions);
         for (int i = 0; i < dtos.Count; i++)
         {
@@ -60,7 +66,9 @@ public class DiscussionService : IDiscussionService
     {
         if (skip < 0 || take < 0) throw new ArgumentOutOfRangeException("skip or take cannot be negative");
 
-        var discussions = await _discussionRepository.GetWhere(d => d.UserId == userId, false, "Comments", "DiscussionRatings").Skip(skip).Take(take).ToListAsync();
+        var discussions = await _discussionRepository
+            .GetWhere(d => d.UserId == userId, false, "Comments", "DiscussionRatings").Skip(skip).Take(take)
+            .ToListAsync();
         var dtos = _mapper.Map<List<DiscussionListDto>>(discussions);
         for (int i = 0; i < dtos.Count; i++)
         {
@@ -73,7 +81,8 @@ public class DiscussionService : IDiscussionService
 
     public async Task<DiscussionDetailDto> GetByIdAsync(Guid id)
     {
-        var discussion = await _discussionRepository.GetByIdAsync(id, false, "User", "Community", "Comments", "DiscussionRatings");
+        var discussion =
+            await _discussionRepository.GetByIdAsync(id, false, "User", "Community", "Comments", "DiscussionRatings");
         if (discussion == null)
             throw new NotFoundException<Discussion>();
         var dto = _mapper.Map<DiscussionDetailDto>(discussion);
@@ -143,12 +152,23 @@ public class DiscussionService : IDiscussionService
         if (discussion == null) throw new NotFoundException<Discussion>();
 
         discussion.DiscussionRatings ??= new List<DiscussionRating>();
-        discussion.DiscussionRatings.Add(new DiscussionRating
+
+        var rating = await _commentRatingRepository.GetSingleAsync(r => r.UserId == userId);
+
+        if (rating != null)
         {
-            Rate = model.Rate,
-            UserId = userId,
-            DiscussionId = model.DiscussionId
-        });
+            if (rating.Rate == model.Rate) _commentRatingRepository.Remove(rating);
+            else rating.Rate = rating.Rate == Rates.Up ? Rates.Down : Rates.Up;
+        }
+        else
+        {
+            discussion.DiscussionRatings.Add(new DiscussionRating
+            {
+                Rate = model.Rate,
+                UserId = userId,
+                DiscussionId = model.DiscussionId
+            });
+        }
 
         await _discussionRepository.SaveAsync();
         return true;

@@ -9,14 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54195741-978e-4237-8fc5-8238262d9280" name="Changes" comment="Added Ratings to discussions">
-      <change afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Comment/RateCommentDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/ICommentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/ICommentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Comment/ChildCommentListDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Comment/ChildCommentListDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Comment/CommentDetailDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Comment/CommentDetailDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Comment/CommentListDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Comment/CommentListDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommentService.cs" afterDir="false" />
+    <list default="true" id="54195741-978e-4237-8fc5-8238262d9280" name="Changes" comment="updated DiscussionService">
+      <change afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/Repositories/ICommentRatingRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/Repositories/IDiscussionRatingRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/DiscussionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/DiscussionService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +25,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/fscod/RiderProjects/DiscussionForum/Core/DiscussionForum.Application/DTOs/Comment/ChildCommentListDto.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Community/CommunityDetailDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/User/UserDetailDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
@@ -37,10 +33,9 @@
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Domain/Entities/Community.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Domain/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Contexts/DiscussionForumDbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/fscod/RiderProjects/DiscussionForum/Infrastructure/DiscussionForum.Persistence/Services/CommunityService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommunityService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/fscod/RiderProjects/DiscussionForum/Presentation/DiscussionForum.API/Controllers/CommunityController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/DiscussionForum.API/Controllers/CommunityController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/fscod/RiderProjects/DiscussionForum/Presentation/DiscussionForum.API/Controllers/DiscussionController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/DiscussionForum.API/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/DiscussionForum.API/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -178,7 +173,7 @@
       <workItem from="1699436890992" duration="111000" />
       <workItem from="1699704784719" duration="3926000" />
       <workItem from="1699771142148" duration="2738000" />
-      <workItem from="1699803650203" duration="9376000" />
+      <workItem from="1699803650203" duration="10368000" />
     </task>
     <task id="LOCAL-00001" summary="Users table added">
       <option name="closed" value="true" />
@@ -268,7 +263,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699808827299</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="updated CommentService">
+      <option name="closed" value="true" />
+      <created>1699815249259</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699815249259</updated>
+    </task>
+    <task id="LOCAL-00013" summary="updated DiscussionService">
+      <option name="closed" value="true" />
+      <created>1699815515317</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699815515317</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,9 +341,10 @@
     <MESSAGE value="updated" />
     <MESSAGE value="updated userService" />
     <MESSAGE value="updated communityService" />
-    <MESSAGE value="updated DiscussionService" />
     <MESSAGE value="Added Ratings to discussions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Ratings to discussions" />
+    <MESSAGE value="updated CommentService" />
+    <MESSAGE value="updated DiscussionService" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated DiscussionService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -352,13 +364,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/DiscussionService.cs</url>
-          <line>29</line>
+          <line>31</line>
           <properties documentPath="C:\Users\fscod\RiderProjects\DiscussionForum\Infrastructure\DiscussionForum.Persistence\Services\DiscussionService.cs" initialLine="29" containingFunctionPresentation="Method 'GetAllAsync'">
             <startOffsets>
-              <option value="1140" />
+              <option value="1284" />
             </startOffsets>
             <endOffsets>
-              <option value="1141" />
+              <option value="1285" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />
