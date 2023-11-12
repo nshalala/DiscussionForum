@@ -25,7 +25,7 @@ public class UserService : IUserService
         _mapper = mapper;
     }
 
-    public async Task<List<UserListDto>> GetAllUsersAsync(int take, int skip = 0)
+    public async Task<List<UserListDto>> GetAllUsersAsync(int skip, int take)
     {
         if (skip < 0 || take < 0)
             throw new ArgumentOutOfRangeException("Skip/Take values cannot be negative");
@@ -61,6 +61,7 @@ public class UserService : IUserService
         user.HashedPassword = hashedPassword[0];
         user.Salt = hashedPassword[1];
         user.Role = ApplicationRole.User;
+        user.CreatedAt = DateTime.UtcNow;
 
         var response = await _userRepository.AddAsync(user);
         await _userRepository.SaveAsync();
@@ -69,9 +70,9 @@ public class UserService : IUserService
 
     public async Task<bool> UpdateUserAsync(UpdateUserDto model)
     {
-        var userId = _contextAccessor.HttpContext?.User.FindFirst(ClaimTypes.Sid)?.Value;
-        var user = await _userRepository.GetSingleAsync(u => u.Id == Guid.Parse(userId));
+        var userId = GetUserId();
 
+        var user = await _userRepository.GetByIdAsync(userId);
         if (user == null)
             throw new NotFoundException<User>();
 
@@ -102,7 +103,7 @@ public class UserService : IUserService
                         PasswordOperation.VerifyPassword(model.CurrentPassword, user.Salt, user.HashedPassword);
                     if (!response)
                         throw new IncorrectPasswordException();
-                    if(model.NewPassword == model.NewPasswordConfirm)
+                    if (model.NewPassword == model.NewPasswordConfirm)
                     {
                         var hashAndSalt = PasswordOperation.CalculateSha256Hash(model.NewPassword);
                         user.HashedPassword = hashAndSalt[0];
@@ -117,7 +118,7 @@ public class UserService : IUserService
             else
                 throw new Exception("Password must be at least 8 characters length.");
         }
-        
+
         await _userRepository.SaveAsync();
         return true;
     }
@@ -135,11 +136,24 @@ public class UserService : IUserService
 
     public async Task<bool> DeleteUserAsync(Guid id)
     {
-        var user = await _userRepository.GetSingleAsync(u => u.Id == id);
+        var userId = GetUserId();
+        if (id != userId)
+            throw new UnauthorizedAccessException();
+
+        var user = await _userRepository.GetByIdAsync(id);
         if (user == null)
             throw new NotFoundException<User>();
+        
         var response = _userRepository.Remove(user);
         await _userRepository.SaveAsync();
         return response;
+    }
+
+    private Guid GetUserId()
+    {
+        var userId = _contextAccessor.HttpContext?.User.FindFirst(ClaimTypes.Sid)?.Value;
+        if (userId == null)
+            throw new Exception("Log in");
+        return Guid.Parse(userId);
     }
 }

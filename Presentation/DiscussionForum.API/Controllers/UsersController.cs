@@ -9,7 +9,6 @@ namespace DiscussionForum.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
 public class UsersController : ControllerBase
 {
     private readonly IUserService _userService;
@@ -35,7 +34,6 @@ public class UsersController : ControllerBase
     }
 
     [HttpPost]
-    [AllowAnonymous]
     public async Task<IActionResult> RegisterUser(RegisterUserDto model)
     {
         var response = await _userService.RegisterUserAsync(model);
@@ -43,6 +41,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpPut]
+    [Authorize]
     public async Task<IActionResult> UpdateUser([FromForm] UpdateUserDto model)
     {
         var response = await _userService.UpdateUserAsync(model);
@@ -50,6 +49,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpDelete]
+    [Authorize]
     public async Task<IActionResult> DeleteUser(Guid id)
     {
         var response = await _userService.DeleteUserAsync(id);
