@@ -128,15 +128,15 @@ public class CommunityService : ICommunityService
         if (community == null)
             throw new NotFoundException<Community>();
 
-        if (community.Members.All(m => m.Id != userId))
-            throw new Exception("user is not a member");
-
         if (community.Members.Count == 1 && community.AdminUsers.Any(a => a.Id == userId))
         {
             _communityRepository.Remove(community);
             await _communityRepository.SaveAsync();
             return true;
         }
+        
+        if (community.Members.All(m => m.Id != userId))
+            throw new Exception("user is not a member");
 
         var user = await _userRepository.GetByIdAsync(userId);
         if (user == null)

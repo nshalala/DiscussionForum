@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jMQbO7/3958NxZDHlksDoOObA7aRrJfaw2BQKFGP4IA=",
+  "Hash": "lALqflYQjOiBQWaPZWPbZO7jeELjTH6+AdFYnoRIYvE=",
   "Source": "DiscussionForum.API",
   "BasePath": "_content/DiscussionForum.API",
   "Mode": "Default",
@@ -8,9 +8,9 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "DiscussionForum.API\\wwwroot",
+      "Name": "DiscussionForum.API/wwwroot",
       "Source": "DiscussionForum.API",
-      "ContentRoot": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Presentation\\DiscussionForum.API\\wwwroot\\",
+      "ContentRoot": "/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/wwwroot/",
       "BasePath": "_content/DiscussionForum.API",
       "Pattern": "**"
     }

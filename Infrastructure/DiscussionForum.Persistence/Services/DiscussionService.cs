@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using AutoMapper;
 using DiscussionForum.Application.Abstractions.Services;
+using DiscussionForum.Application.Abstractions.Storages;
 using DiscussionForum.Application.DTOs.Discussion;
 using DiscussionForum.Application.Exceptions;
 using DiscussionForum.Application.Repositories;
@@ -18,14 +19,16 @@ public class DiscussionService : IDiscussionService
     private readonly ICommunityRepository _communityRepository;
     private readonly ICommentRatingRepository _commentRatingRepository;
     private readonly IMapper _mapper;
+    private readonly ILocalStorageService _storageService;
 
     public DiscussionService(IDiscussionRepository discussionRepository, IMapper mapper,
-        ICommunityRepository communityRepository, ICommentRatingRepository commentRatingRepository)
+        ICommunityRepository communityRepository, ICommentRatingRepository commentRatingRepository, ILocalStorageService storageService)
     {
         _discussionRepository = discussionRepository;
         _mapper = mapper;
         _communityRepository = communityRepository;
         _commentRatingRepository = commentRatingRepository;
+        _storageService = storageService;
     }
 
     public async Task<List<DiscussionListDto>> GetAllAsync(int skip, int take)
@@ -105,6 +108,8 @@ public class DiscussionService : IDiscussionService
         var discussion = _mapper.Map<Discussion>(model);
         discussion.UserId = userId;
         discussion.CreatedAt = DateTime.UtcNow;
+        if(model.Files != null)
+            discussion.FilePaths = await _storageService.UploadAsync("assets/discussions/files", model.Files);
 
         var response = await _discussionRepository.AddAsync(discussion);
         await _discussionRepository.SaveAsync();
@@ -125,6 +130,10 @@ public class DiscussionService : IDiscussionService
             throw new UnauthorizedAccessException();
 
         _mapper.Map(model, discussion);
+
+        if (model.Files != null)
+            discussion.FilePaths = await _storageService.UploadAsync("assets/discussions/files", model.Files);
+        
         await _discussionRepository.SaveAsync();
         return true;
     }
@@ -140,7 +149,16 @@ public class DiscussionService : IDiscussionService
         if (discussion.UserId != userId && discussion.Community.AdminUsers.All(u => u.Id != userId))
             throw new UnauthorizedAccessException();
 
+        var temp = discussion.FilePaths;
+
         var response = _discussionRepository.Remove(discussion);
+        if (response && temp != null)
+        {
+            foreach (var filePath in temp)
+            {
+                await _storageService.DeleteAsync(filePath);
+            }
+        }
         await _discussionRepository.SaveAsync();
         return response;
     }

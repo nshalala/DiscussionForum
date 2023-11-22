@@ -26,7 +26,7 @@ public class LocalStorageService : ILocalStorageService
             await using var stream = new FileStream($"{uploadPath}/{fileNewName}", FileMode.Create);
             await file.CopyToAsync(stream);
             await stream.FlushAsync();
-            datas.Add($"{uploadPath}\\{fileNewName}");
+            datas.Add($"{uploadPath}/{fileNewName}");
         }
 
         return datas;

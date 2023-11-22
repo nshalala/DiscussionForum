@@ -9,63 +9,100 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54195741-978e-4237-8fc5-8238262d9280" name="Changes" comment="">
+    <list default="true" id="54195741-978e-4237-8fc5-8238262d9280" name="Changes" comment="Added FilePaths Column to Discussions table">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/dataSources/971c20a5-0a52-4706-ab33-0d2c0f6ded3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/dataSources/971c20a5-0a52-4706-ab33-0d2c0f6ded3f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/DiscussionForum.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DiscussionForum.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/bin/Debug/net7.0/DiscussionForum.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/bin/Debug/net7.0/DiscussionForum.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/bin/Debug/net7.0/DiscussionForum.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/bin/Debug/net7.0/DiscussionForum.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/bin/Debug/net7.0/DiscussionForum.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/bin/Debug/net7.0/DiscussionForum.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/bin/Debug/net7.0/DiscussionForum.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/bin/Debug/net7.0/DiscussionForum.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/DiscussionForum.Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/DiscussionForum.Application.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/DiscussionForum.Application.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/DiscussionForum.Application.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/bin/Debug/net7.0/DiscussionForum.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/bin/Debug/net7.0/DiscussionForum.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/bin/Debug/net7.0/DiscussionForum.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/bin/Debug/net7.0/DiscussionForum.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/DiscussionForum.Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/DiscussionForum.Domain.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/DiscussionForum.Domain.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/DiscussionForum.Domain.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscussionForum.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DiscussionForum.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/Services/Storages/LocalStorageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/Services/Storages/LocalStorageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/bin/Debug/net7.0/DiscussionForum.Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/DiscussionForum.Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/DiscussionForum.Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/DiscussionForum.Infrastructure.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/DiscussionForum.Infrastructure.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommunityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommunityService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/DiscussionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/DiscussionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/bin/Debug/net7.0/DiscussionForum.Persistence.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/ref/DiscussionForum.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/ref/DiscussionForum.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/refint/DiscussionForum.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/refint/DiscussionForum.Persistence.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.API.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.API.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.API.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/DiscussionForum.Persistence.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/FluentValidation.AspNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/FluentValidation.AspNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/Microsoft.AspNetCore.JsonPatch.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/Microsoft.AspNetCore.JsonPatch.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/Newtonsoft.Json.Bson.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/Newtonsoft.Json.Bson.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/Newtonsoft.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/Newtonsoft.Json.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/bin/Debug/net7.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/ref/DiscussionForum.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/ref/DiscussionForum.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/refint/DiscussionForum.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/refint/DiscussionForum.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.DiscussionForum.API.props" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.DiscussionForum.API.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.DiscussionForum.API.props" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.DiscussionForum.API.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +114,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="88d229d2-8bd0-4eeb-b524-69086e986752" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cd9515a055ca47fb86edbe82ce8506f714600/ee/e8c47e9d/ClaimTypes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e7cd48e1ebca483db8c37d1d8c4982021e4a00/fb/9102cc15/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -84,6 +124,8 @@
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/ICommunityService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Community/CommunityDetailDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/DTOs/Discussion/CreateDiscussionDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/DTOs/Discussion/CreateDiscussionDto.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/User/UserDetailDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/Profiles/CommunityMappingProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
@@ -233,6 +275,7 @@
       <workItem from="1699803650203" duration="12079000" />
       <workItem from="1700392649033" duration="153000" />
       <workItem from="1700629531548" duration="42000" />
+      <workItem from="1700679464703" duration="4413000" />
     </task>
     <task id="LOCAL-00001" summary="Users table added">
       <option name="closed" value="true" />
@@ -346,7 +389,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699816381849</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="created repositories for ratings classes and registered">
+      <option name="closed" value="true" />
+      <created>1700679868642</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700679868642</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added FilePaths Column to Discussions table">
+      <option name="closed" value="true" />
+      <created>1700680852537</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700680852537</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +471,9 @@
     <MESSAGE value="updated CommentService" />
     <MESSAGE value="updated DiscussionService" />
     <MESSAGE value="updated rate functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated rate functions" />
+    <MESSAGE value="created repositories for ratings classes and registered" />
+    <MESSAGE value="Added FilePaths Column to Discussions table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added FilePaths Column to Discussions table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -422,12 +483,6 @@
           <line>87</line>
           <properties documentPath="C:\Users\fscod\RiderProjects\DiscussionForum\Infrastructure\DiscussionForum.Persistence\Services\CommunityService.cs" initialLine="89" containingFunctionPresentation="Method 'DeleteAsync'" />
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/DiscussionService.cs</url>
-          <line>31</line>
-          <properties documentPath="C:\Users\fscod\RiderProjects\DiscussionForum\Infrastructure\DiscussionForum.Persistence\Services\DiscussionService.cs" initialLine="29" containingFunctionPresentation="Method 'GetAllAsync'" />
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

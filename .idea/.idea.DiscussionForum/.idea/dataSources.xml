@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="DiscussionForum@Localhost" uuid="971c20a5-0a52-4706-ab33-0d2c0f6ded3f">
+    <data-source source="LOCAL" name="DiscussionForum@Localhost [2]" uuid="dbd2546c-d1f0-492e-8fc7-6187aabefcc1">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <configured-by-url>true</configured-by-url>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://Localhost:5432/DiscussionForum?password=Nasirli@10&amp;user=postgres</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="DiscussionForum@Localhost [2]" uuid="cfe1b249-feed-44d6-b7fb-02cdfb255468">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <configured-by-url>true</configured-by-url>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://Localhost:5432/DiscussionForum?password=123456789&amp;user=postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://Localhost:5432/DiscussionForum?password=nasirli%4010&amp;user=postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
