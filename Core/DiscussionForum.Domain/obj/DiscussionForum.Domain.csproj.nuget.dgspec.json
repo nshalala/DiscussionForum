@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Domain\\DiscussionForum.Domain.csproj": {}
+    "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/DiscussionForum.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Domain\\DiscussionForum.Domain.csproj": {
+    "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/DiscussionForum.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Domain\\DiscussionForum.Domain.csproj",
+        "projectUniqueName": "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/DiscussionForum.Domain.csproj",
         "projectName": "DiscussionForum.Domain",
-        "projectPath": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Domain\\DiscussionForum.Domain.csproj",
-        "packagesPath": "C:\\Users\\fscod\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Domain\\obj\\",
+        "projectPath": "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/DiscussionForum.Domain.csproj",
+        "packagesPath": "/home/shalala/.nuget/packages/",
+        "outputPath": "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\fscod\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/shalala/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/shalala/.dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

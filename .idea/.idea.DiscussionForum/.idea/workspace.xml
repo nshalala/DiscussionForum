@@ -9,12 +9,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54195741-978e-4237-8fc5-8238262d9280" name="Changes" comment="updated rate functions">
-      <change afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Storages/ILocalStorageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/Services/Storages/LocalStorageService.cs" afterDir="false" />
+    <list default="true" id="54195741-978e-4237-8fc5-8238262d9280" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/dataSources/971c20a5-0a52-4706-ab33-0d2c0f6ded3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/dataSources/971c20a5-0a52-4706-ab33-0d2c0f6ded3f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscussionForum/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/DiscussionForum.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/DiscussionForum.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/DiscussionForum.Application.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/DiscussionForum.Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/DiscussionForum.Application.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/DiscussionForum.Application.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/DiscussionForum.Application.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Application/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/Debug/net7.0/DiscussionForum.Domain.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/DiscussionForum.Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/DiscussionForum.Domain.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/DiscussionForum.Domain.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/DiscussionForum.Domain.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DiscussionForum.Domain/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscussionForum.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DiscussionForum.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/Debug/net7.0/DiscussionForum.Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/DiscussionForum.Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/DiscussionForum.Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/DiscussionForum.Infrastructure.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/DiscussionForum.Infrastructure.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Infrastructure/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/Debug/net7.0/DiscussionForum.Persistence.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/DiscussionForum.Persistence.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/Debug/net7.0/DiscussionForum.API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/DiscussionForum.API.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/DiscussionForum.API/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,19 +78,21 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cd9515a055ca47fb86edbe82ce8506f714600/ee/e8c47e9d/ClaimTypes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e7cd48e1ebca483db8c37d1d8c4982021e4a00/fb/9102cc15/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9b282b4fe8c3da0e0e16c9951a932d911f7ba42d46571d9d31ec9ac21268d2d/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/ICommunityService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/Abstractions/Services/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/fscod/RiderProjects/DiscussionForum/Core/DiscussionForum.Application/DTOs/Comment/ChildCommentListDto.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/Community/CommunityDetailDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/DTOs/User/UserDetailDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/Profiles/CommunityMappingProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Application/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Domain/Entities/Common/BaseEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Domain/Entities/Community.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DiscussionForum.Domain/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Contexts/DiscussionForumDbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/fscod/RiderProjects/DiscussionForum/Infrastructure/DiscussionForum.Persistence/Services/CommentService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommunityService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/DiscussionForum.API/Controllers/CommunityController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/fscod/RiderProjects/DiscussionForum/Presentation/DiscussionForum.API/Controllers/DiscussionController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/DiscussionForum.API/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/DiscussionForum.API/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -57,33 +111,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/shalala/Desktop/BinaAz",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/shalala/Desktop/BinaAz&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "rider.external.source.directories": [
-      "C:\\Users\\fscod\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\fscod\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\fscod\\AppData\\Local\\Symbols\\src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/home/shalala/.config/JetBrains/Rider2023.2/resharper-host/DecompilerCache&quot;,
+      &quot;/home/shalala/.config/JetBrains/Rider2023.2/resharper-host/SourcesCache&quot;,
+      &quot;/home/shalala/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.DiscussionForum.API: http">
     <configuration name="DiscussionForum.API: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Presentation/DiscussionForum.API/DiscussionForum.API.csproj" />
@@ -177,6 +231,8 @@
       <workItem from="1699704784719" duration="3926000" />
       <workItem from="1699771142148" duration="2738000" />
       <workItem from="1699803650203" duration="12079000" />
+      <workItem from="1700392649033" duration="153000" />
+      <workItem from="1700629531548" duration="42000" />
     </task>
     <task id="LOCAL-00001" summary="Users table added">
       <option name="closed" value="true" />
@@ -364,27 +420,13 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/CommunityService.cs</url>
           <line>87</line>
-          <properties documentPath="C:\Users\fscod\RiderProjects\DiscussionForum\Infrastructure\DiscussionForum.Persistence\Services\CommunityService.cs" initialLine="89" containingFunctionPresentation="Method 'DeleteAsync'">
-            <startOffsets>
-              <option value="3205" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3206" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\fscod\RiderProjects\DiscussionForum\Infrastructure\DiscussionForum.Persistence\Services\CommunityService.cs" initialLine="89" containingFunctionPresentation="Method 'DeleteAsync'" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Infrastructure/DiscussionForum.Persistence/Services/DiscussionService.cs</url>
           <line>31</line>
-          <properties documentPath="C:\Users\fscod\RiderProjects\DiscussionForum\Infrastructure\DiscussionForum.Persistence\Services\DiscussionService.cs" initialLine="29" containingFunctionPresentation="Method 'GetAllAsync'">
-            <startOffsets>
-              <option value="1284" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1285" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\fscod\RiderProjects\DiscussionForum\Infrastructure\DiscussionForum.Persistence\Services\DiscussionService.cs" initialLine="29" containingFunctionPresentation="Method 'GetAllAsync'" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

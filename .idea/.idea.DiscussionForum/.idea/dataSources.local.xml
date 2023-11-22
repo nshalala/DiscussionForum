@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="RD-232.9921.83">
+  <component name="dataSourceStorageLocal" created-in="RD-232.10203.29">
     <data-source name="DiscussionForum@Localhost" uuid="971c20a5-0a52-4706-ab33-0d2c0f6ded3f">
       <database-info product="PostgreSQL" version="16.0 (Debian 16.0-1.pgdg120+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="16.0">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
       <auth-provider>no-auth</auth-provider>
       <user-name>postgres</user-name>
       <schema-mapping>

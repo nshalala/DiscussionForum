@@ -1048,7 +1048,8 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "DiscussionForum.Domain": "1.0.0",
-          "FluentValidation.DependencyInjectionExtensions": "11.7.1"
+          "FluentValidation.DependencyInjectionExtensions": "11.7.1",
+          "Microsoft.AspNetCore.Http": "2.2.2"
         },
         "compile": {
           "bin/placeholder/DiscussionForum.Application.dll": {}
@@ -2829,19 +2830,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fscod\\.nuget\\packages\\": {}
+    "/home/shalala/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Presentation\\DiscussionForum.API\\DiscussionForum.API.csproj",
+      "projectUniqueName": "/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/DiscussionForum.API.csproj",
       "projectName": "DiscussionForum.API",
-      "projectPath": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Presentation\\DiscussionForum.API\\DiscussionForum.API.csproj",
-      "packagesPath": "C:\\Users\\fscod\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Presentation\\DiscussionForum.API\\obj\\",
+      "projectPath": "/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/DiscussionForum.API.csproj",
+      "packagesPath": "/home/shalala/.nuget/packages/",
+      "outputPath": "/home/shalala/Desktop/DiscussionForum/Presentation/DiscussionForum.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fscod\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/shalala/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -2853,11 +2854,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Application\\DiscussionForum.Application.csproj": {
-              "projectPath": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Core\\DiscussionForum.Application\\DiscussionForum.Application.csproj"
+            "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/DiscussionForum.Application.csproj": {
+              "projectPath": "/home/shalala/Desktop/DiscussionForum/Core/DiscussionForum.Application/DiscussionForum.Application.csproj"
             },
-            "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Infrastructure\\DiscussionForum.Persistence\\DiscussionForum.Persistence.csproj": {
-              "projectPath": "C:\\Users\\fscod\\RiderProjects\\DiscussionForum\\Infrastructure\\DiscussionForum.Persistence\\DiscussionForum.Persistence.csproj"
+            "/home/shalala/Desktop/DiscussionForum/Infrastructure/DiscussionForum.Persistence/DiscussionForum.Persistence.csproj": {
+              "projectPath": "/home/shalala/Desktop/DiscussionForum/Infrastructure/DiscussionForum.Persistence/DiscussionForum.Persistence.csproj"
             }
           }
         }
@@ -2918,7 +2919,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/shalala/.dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DiscussionForum.Persistence
-build_property.ProjectDir = C:\Users\fscod\RiderProjects\DiscussionForum\Infrastructure\DiscussionForum.Persistence\
+build_property.ProjectDir = /home/shalala/Desktop/DiscussionForum/Infrastructure/DiscussionForum.Persistence/
